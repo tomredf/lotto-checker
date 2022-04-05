@@ -1,0 +1,88 @@
+---
+title: Moving a Small Business from Windows to Chrome OS
+date: '2021-08-28'
+tags: ['windows', 'chrome os', 'computers']
+draft: false
+summary: 'Switching a small business from Windows to Chrome OS. The challenges faced, and the solutions I found to make it all work.'
+---
+
+## Introduction
+
+In May 2015, I started working for a small company with around 20 employees. It was a landscape materials supply company with two locations.
+One was an office/sales centre/showroom, and the other was a distribution centre. This post will outline the problems with the old system,
+the challenges faced, and the solutions I found to make it all work.
+
+## Existing setup
+
+The existing setup was all Windows. The sales order system was running on a remote Windows Server, accessed by each user from a Windows computer
+using Remote Desktop. These user machines were old and very, very slow. These machines needed replacing badly.
+
+Each user had their own Gmail account and saved files to their local hard drives, which meant that other than the sales order system,
+nothing was centralized, backed up or secured.
+
+## First Things First
+
+Before doing anything else, we switched to a paid G Suite account and linked it to the company domain. Now everyone had a proper company email address,
+which could be all centrally managed. Of course, this also meant access to all the Google Docs apps and Google Drive for file storage. This change alone
+was a vast improvement, but we still had those slow machines, and users could still save files to their local hard drives.
+
+## Chromeboxes To The Rescue
+
+After lots of research, I concluded that Chromeboxes was the solution. We could have used Chromebooks, but everyone worked at a desk and wanted one or
+two large monitors. We went with HP Chromeboxes, which were inexpensive. Setup was easy, and we signed up for Google Chrome Device Management, making
+it easy to configure or wipe any enrolled device remotely.
+
+## Advantages
+
+The first significant advantage is that users log on to the device using their company Gmail account. It then loads up the Chrome browser with Gmail,
+Google Drive and all the Google docs apps. It also made it easy for multiple employees to share one Chromebox.
+
+The second significant advantage was that the device booted up fast, which meant they could be productive way more quickly in the mornings. Some of the
+old Windows machines took 5 to 10 minutes to become useable.
+
+Then, of course, there was security; this setup is way more secure than the old Windows machines. We didn’t have to worry about viruses or anything like that.
+
+If a Chromebox died, we did not lose anything, as everything is in the cloud. Just plug in a new Chromebox, enroll it in the device admin, let the user login,
+and away you go. No files are lost, and it only takes 10 minutes to get the user back working again.
+
+A bonus was we could use Google Sites to create internal websites for resources for employees. Things like a knowledge base, product specs and information etc.
+
+## Obstacles
+
+The first obstacle was how do we connect to the Windows server from chrome. The chrome browser has some remote desktop functionality, but it did not work
+for our needs, so we had to find a better solution.
+
+The biggest obstacle we faced was printing. We needed to print from the remote desktop and from the local chrome devices. At the time, the only way of printing
+from a chrome box was via Google Cloud Print. This is great for printing locally from the Chrome boxes to local or remote printers, but on its own, you could
+not use it to print from a Windows server accessed by remote desktop. We tried various workarounds like printing to PDF etc. but none of them were practical,
+especially when you need to print work orders packing slips invoices etc. This one almost made us change our minds and go back to Windows machines.
+When accessing a remote Windows server from a Windows machine, your local network printers are forwarded to the remote server so you can print as if the server
+was connected to your printers.
+
+## Solutions
+
+For Remote Desktop, I found a great solution called [Xtralogic](https://www.xtralogic.com/remote-desktop-client-for-chrome). Xtralogic is a chrome app that lets you connect to a remote computer via remote desktop.
+It runs in its own window, and you can even make it fullscreen. It costs around $10 per user per year, which is very reasonable. It’s been working great
+for years now, and I highly recommend it.
+
+It took a while to find a solution that would let us print from the remote windows server to local printers. In the end, what worked well for us was
+Google Cloud Print for Windows, which is software that enhances Google Cloud Print. You install it on the Windows machine that has the printers connected to it,
+and you install it on the remote Windows server. Then you connect it to the Google account that controls the printers, and then it lets you create virtual
+printers on the server from the Google Cloud Printers. You can print from any software program on the windows server as if the printer was connected directly to the server.
+
+## Conclusion
+
+All in all, it is worked out very well, and here we are five years later, and things are still going strong. Of course, now we are faced with a new challenge,
+as Google has decided to get rid of Google Cloud Print. So we have until the end of December 2020 to come up with a new printing solution for the remote
+Windows server. So far, I have not been able to find a suitable replacement. So this could mean we have to go back to local Windows machines, but I’m still
+hoping I can find a solution to avoid that.
+
+> ### Printing Update
+>
+> At the beginning of 2021, Google shut down Coud Print. We had plenty of warning so we had time to find a replacement. After trying a few different options,
+> we found that [Printix](https://printix.net) was the perfect solution. It turns out it is considerably better than Google Cloud Print so we are very happy with it.
+> Google Cloud Print was free but Printix only costs around $30 per month.
+
+---
+
+Thank you for taking the time to read. If you have any questions or want to see more from me, please [follow me on Twitter](https://twitter.com/dermotfl)

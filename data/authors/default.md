@@ -1,16 +1,29 @@
 ---
-name: Tails Azimuth
+name: Dermot Fitzpatrick
 avatar: /static/images/avatar.png
-occupation: Professor of Atmospheric Science
-company: Stanford University
-email: address@yoursite.com
-twitter: https://twitter.com/Twitter
-linkedin: https://www.linkedin.com
-github: https://github.com
+occupation: Fullstack Developer
+company: dermot.dev
+email: tomredf@gmail.com
+twitter: https://twitter.com/dermotf
+github: https://github.com/tomredf
 ---
 
-Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab. His research interests includes complexity modelling of tailwinds, headwinds and crosswinds.
+I am a fullstack developer living in Vancouver BC Canada. I have been programming on and off for around 20 years. I started with Visual Basic and then MS Access.
+After that it was Lua and then MS SQL Server. But now I mainly use Javascript or JAMStack to be more exact.
 
-He leads the clean energy group which develops 3D air pollution-climate models, writes differential equation solvers, and manufactures titanium plated air ballons. In his free time he bakes raspberry pi.
+Here is a list of my current tools/frameworks/services.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+- Next.js
+- React.js
+- Tailwindcss
+- Python
+- Firebase `Database, hosting, cloud functios and more...`
+- Vercel `Hosting`
+- Webstorm `IDE`
+- VS Code `IDE`
+- Userbase `Database`
+
+It is amazing what you can create with these tools and services. Most of what I have created lately has been for
+internal use. Mostly tools that make employee’s lives easier and streamline processes, .
+
+Thank you for taking the time to read. If you have any questions or want to see more from me, please [follow me on Twitter](https://twitter.com/dermotfl)

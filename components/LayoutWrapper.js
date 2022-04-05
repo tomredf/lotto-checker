@@ -2,6 +2,7 @@ import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
 import Logo from '@/data/logo.svg'
 import Link from './Link'
+import Image from './Image'
 import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import MobileNav from './MobileNav'
@@ -14,7 +15,14 @@ const LayoutWrapper = ({ children }) => {
         <header className="flex items-center justify-between py-10">
           <div>
             <Link href="/" aria-label={siteMetadata.headerTitle}>
-              <div className="flex items-center justify-between">
+              <Image
+                alt={'logo'}
+                src={'/static/images/logo.png'}
+                // className="object-cover object-center md:h-36 lg:h-48"
+                width={250}
+                height={45}
+              />
+              {/*              <div className="flex items-center justify-between">
                 <div className="mr-3">
                   <Logo />
                 </div>
@@ -25,7 +33,7 @@ const LayoutWrapper = ({ children }) => {
                 ) : (
                   siteMetadata.headerTitle
                 )}
-              </div>
+              </div>*/}
             </Link>
           </div>
           <div className="flex items-center text-base leading-5">
