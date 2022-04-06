@@ -17,7 +17,7 @@ Here is a list of my current tools/frameworks/services.
 - React.js
 - Tailwindcss
 - Python
-- Firebase `Database, hosting, cloud functios and more...`
+- Firebase `Database, hosting, cloud functions and more...`
 - Vercel `Hosting`
 - Webstorm `IDE`
 - VS Code `IDE`
@@ -26,4 +26,4 @@ Here is a list of my current tools/frameworks/services.
 It is amazing what you can create with these tools and services. Most of what I have created lately has been for
 internal use. Mostly tools that make employee’s lives easier and streamline processes, .
 
-Thank you for taking the time to read. If you have any questions or want to see more from me, please [follow me on Twitter](https://twitter.com/dermotfl)
+Thank you for taking the time to read. If you have any questions or want to see more from me, please [follow me on Twitter](https://twitter.com/dermotf)

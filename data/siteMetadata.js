@@ -10,9 +10,9 @@ const siteMetadata = {
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
-  email: 'address@yoursite.com',
-  github: 'https://github.com',
-  twitter: 'https://twitter.com/Twitter',
+  email: 'tomredf@gmail.com',
+  github: 'https://github.com/tomredf',
+  twitter: 'https://twitter.com/dermotf',
   //facebook: 'https://facebook.com',
   //youtube: 'https://youtube.com',
   //linkedin: 'https://www.linkedin.com',
@@ -29,7 +29,7 @@ const siteMetadata = {
   newsletter: {
     // supports mailchimp, buttondown, convertkit, klaviyo, revue
     // Please add your .env file and modify it according to your selection
-    provider: 'buttondown',
+    provider: 'convertkit',
   },
   comment: {
     // If you want to use a commenting system other than giscus you have to add it to the

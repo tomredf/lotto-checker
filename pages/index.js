@@ -4,7 +4,9 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
-import Hero from '@/components/Hero'
+import Hero2 from '@/components/Hero2'
+import CTA from '@/components/CTA'
+import Features from '@/components/Features'
 import NewsletterForm from '@/components/NewsletterForm'
 
 const MAX_DISPLAY = 5
@@ -28,7 +30,9 @@ export default function Home({ posts }) {
             {siteMetadata.description}
           </p>
         </div>*/}
-        <Hero />
+        <Hero2 />
+        <Features />
+        <CTA />
         {/*        <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
@@ -92,8 +96,9 @@ export default function Home({ posts }) {
           </Link>
         </div>
       )}*/}
+
       {siteMetadata.newsletter.provider !== '' && (
-        <div className="flex items-center justify-center pt-4">
+        <div className="flex items-center justify-center pt-8">
           <NewsletterForm />
         </div>
       )}

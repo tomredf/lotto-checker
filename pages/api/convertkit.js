@@ -5,7 +5,7 @@ export default async (req, res) => {
   if (!email) {
     return res.status(400).json({ error: 'Email is required' })
   }
-
+  console.log('FORM_ID', process.env.CONVERTKIT_FORM_ID)
   try {
     const FORM_ID = process.env.CONVERTKIT_FORM_ID
     const API_KEY = process.env.CONVERTKIT_API_KEY
