@@ -46,7 +46,7 @@ const features = [
 export default function Features() {
   return (
     <div className="">
-      <div className="mx-auto max-w-7xl py-10 px-4 sm:px-6 lg:py-12 lg:px-0">
+      <div className="mx-auto max-w-7xl py-5 px-4 sm:px-6 lg:py-12 lg:px-0">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-4xl font-extrabold text-primary-500">What can we do for you? </h2>
           <p className="mt-4 text-xl text-gray-600 dark:text-gray-300">
