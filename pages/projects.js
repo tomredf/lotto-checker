@@ -13,11 +13,11 @@ export default function Projects() {
             Projects
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            Some of my most recent projects.
+            Some of our most recent projects.
           </p>
         </div>
-        <div className="container py-12">
-          <div className="-m-4 flex flex-wrap">
+        <div className="container mx-auto py-12">
+          <div className="mx-auto flex flex-wrap justify-center">
             {projectsData.map((d) => (
               <Card
                 key={d.title}
