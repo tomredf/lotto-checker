@@ -1,8 +1,8 @@
 const siteMetadata = {
-  title: 'dermot.dev',
-  author: 'Dermot Fitzpatrick',
-  headerTitle: 'dermot.dev',
-  description: 'My personal portfolio',
+  title: 'Clara Software',
+  author: 'Clara Software',
+  headerTitle: 'Clara Software',
+  description: 'Solutions for small business',
   language: 'en-ca',
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',

@@ -19,8 +19,8 @@ const LayoutWrapper = ({ children }) => {
                 alt={'logo'}
                 src={'/static/images/logo.png'}
                 // className="object-cover object-center md:h-36 lg:h-48"
-                width={250}
-                height={45}
+                width={350}
+                height={53}
               />
               {/*              <div className="flex items-center justify-between">
                 <div className="mr-3">

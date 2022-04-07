@@ -7,6 +7,7 @@ import formatDate from '@/lib/utils/formatDate'
 import Hero2 from '@/components/Hero2'
 import CTA from '@/components/CTA'
 import Features from '@/components/Features'
+import Reviews from '@/components/Reviews'
 import NewsletterForm from '@/components/NewsletterForm'
 
 const MAX_DISPLAY = 5
@@ -32,6 +33,7 @@ export default function Home({ posts }) {
         </div>*/}
         <Hero2 />
         <Features />
+        <Reviews />
         <CTA />
         {/*        <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}

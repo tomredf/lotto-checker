@@ -8,7 +8,7 @@ export default function ContactUs() {
           Contact Us
         </h1>
         <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-          Some of my most recent projects.
+          Interested in discussing a custom web app for you business? Send us a message below.
         </p>
       </div>
       <Contact />

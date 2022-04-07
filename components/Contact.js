@@ -1,4 +1,5 @@
 import { MailIcon, MenuIcon, PhoneIcon, XIcon } from '@heroicons/react/outline'
+import Image from '@/components/Image'
 
 export default function Contact() {
   return (
@@ -111,25 +112,39 @@ export default function Contact() {
                   </defs>
                 </svg>
               </div>
-              <h3 className="text-lg font-medium text-white">Contact information</h3>
+              <Image
+                alt={'logo'}
+                src={'/static/images/logo-white.png'}
+                // className="object-cover object-center md:h-36 lg:h-48"
+                width={350}
+                height={59}
+              />
+              <h3 className="pt-3 text-xl font-bold text-white">Contact information</h3>
               <p className="mt-6 max-w-3xl text-base text-primary-50">
-                Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst
-                amet. Sapien tortor lacus arcu.
+                If you are interested in discussing a custom web app for you business or have any
+                questions, please contact using the contact info below or send us a message using
+                the form.
               </p>
               <dl className="mt-8 space-y-6">
                 <dt>
                   <span className="sr-only">Phone number</span>
                 </dt>
                 <dd className="flex text-base text-primary-50">
-                  <PhoneIcon className="h-6 w-6 flex-shrink-0 text-orange-500" aria-hidden="true" />
-                  <span className="ml-3">+1 (555) 123-4567</span>
+                  <PhoneIcon
+                    className="h-6 w-6 flex-shrink-0 text-primary-200 hover:text-primary-100"
+                    aria-hidden="true"
+                  />
+                  <span className="ml-3">+1 (778) 688-4987</span>
                 </dd>
                 <dt>
                   <span className="sr-only">Email</span>
                 </dt>
                 <dd className="flex text-base text-primary-50">
-                  <MailIcon className="h-6 w-6 flex-shrink-0 text-orange-500" aria-hidden="true" />
-                  <span className="ml-3">support@workcation.com</span>
+                  <MailIcon
+                    className="h-6 w-6 flex-shrink-0 text-primary-200 hover:text-primary-100"
+                    aria-hidden="true"
+                  />
+                  <span className="ml-3">info@clarasoftware.com</span>
                 </dd>
               </dl>
               <ul role="list" className="mt-8 flex space-x-12">

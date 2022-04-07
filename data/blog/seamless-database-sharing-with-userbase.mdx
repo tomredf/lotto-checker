@@ -1,0 +1,101 @@
+---
+title: Seamless Database Sharing With Userbase
+date: '2022-04-07'
+tags: ['database', 'userbase', 'computers', 'javascript']
+draft: false
+images: ['/static/images/userbase.png']
+summary: 'How I setup seamless Userbase database sharing in my web app for a company with multiple users.'
+---
+
+## What Is Userbase
+
+[Userbase](https://userbase.com) is a pretty new service that lets you create secure and private web apps using only static JavaScript, HTML, and CSS.
+I have been using it almost from the beginning, and I love it.
+
+My current app is for use within a company, with many users having access to the same database. So the database sharing feature of
+Userbase will come in very handy. The way database sharing works is you call the `shareDatabase()` function passing it the username of an
+existing user and the database’s name. See the example below.
+
+```js:shareDatabase()
+userbase.shareDatabase({
+  databaseName: 'example-database-name',
+  username: 'alice'
+}).then(() => {
+  // Alice can now access the database
+}).catch((e) => console.error(e))
+```
+
+Now the user you just shared it with must get the databaseId of the shared database to open it. To do this, you use the `getDatabases()`
+function, as seen in the example below.
+
+```js:getDatabases()
+userbase.getDatabases().then((databases) => {
+  // databases result available
+}).catch((e) => console.error(e))
+```
+
+They can pass in the database name if they know it to return the one database and get the databaseId. Once they have the databaseId,
+they can open the database.
+
+While this all works great, in my case, where I am dealing with non-technical users, none of this was practical, so I had to develop a
+better solution.
+
+## My Solution
+
+Keep in mind that this only applies to situations where multiple users need to use the same database within a company or organization.
+The first user to sign up within the app becomes the admin. When they log in for the first time, the app creates a new database.
+The user does not need to know the name of the database. They can now use the app as usual.
+
+To add new users, the admin user can sign them up (recommended) or let them sign up themselves. As each new user is added and
+automatically signed in, the app creates a new database. These new users should not use the app yet, which means they will never
+use the just-created database.
+
+The admin can now log in with their account and start sharing the database with the new users. All they have to do is enter the
+username and click a button. See the image below.
+
+![Add User](/static/images/userbase-1.png)
+
+The Add User button calls the `shareDatabase()` function passing it the database name and username.
+
+The option to add users is only available to the admin, so I had to add a way to determine if a user was an admin.
+The solution turned out to be relatively straightforward. If there is only one database, then they are the admin.
+If there is more than one, then they are a regular user. There will be two databases because one database was created
+when the first sign up and log in, and then one database is shared with them. Here is the code I used.
+
+```js:getDatabases()
+// Check to see if it is an admin user or a regular user
+    userbase.getDatabases().then((res) => {
+      if (res.databases.length == 1) {
+        isAdmin = true
+        userType = 'Admin'
+        users = res.databases[0].users
+      }
+      else {
+        isAdmin = false
+        userType = 'User'
+        databaseId = res.databases[1].databaseId
+        users = []
+      }
+    }).catch((e) => console.error(e))
+```
+
+If the databases’ length is equal to 1, they are an admin, so I set some variables and get the list of all users who have
+access to the database. They will have access to features like adding, viewing and removing users. If the length of
+databases is greater than 1, they are regular users, which means they won’t have access to features like adding, viewing and
+removing users. We also grab the `databaseId` of the second database (which is the shared one) in the array. The `databaseId` is
+required to work with a shared database.
+
+All database actions require either the `databaseName` if it is not a shared database, or `databaseId` if it is a shared database.
+
+The admin can remove users by simply selecting them from a drop-down list and click a button.
+
+![Add User](/static/images/userbase-2.png)
+
+## Conclusion
+
+We end up with a completely seamless experience where no one needs to know or enter the databaseName or databaseId.
+The users don’t even need to know they are sharing a database. They are just adding users, which is great for non-technical users.
+
+---
+
+Thank you for taking the time to read. If you have any questions or want to see more from us, please [follow us on Twitter](https://twitter.com/dermotfl)
