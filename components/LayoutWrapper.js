@@ -12,7 +12,10 @@ const LayoutWrapper = ({ children }) => {
   return (
     <SectionContainer>
       <div className="flex h-screen flex-col justify-between">
-        <header className="sticky top-0 z-50 mb-5 flex items-center justify-between border-b border-gray-200 bg-white bg-opacity-75 py-3 backdrop-blur-md dark:border-gray-700 dark:bg-gray-900 dark:bg-opacity-75 sm:mb-5">
+        <header
+          className="sticky top-0 z-50 mb-5 flex items-center justify-between border-b border-gray-200 bg-white 
+        bg-opacity-75 py-3 backdrop-blur-md dark:border-gray-700 dark:bg-gray-900 dark:bg-opacity-75 sm:mb-5"
+        >
           <div>
             <Link href="/" aria-label={siteMetadata.headerTitle}>
               <Image

@@ -21,7 +21,7 @@ export default function Example() {
                       with a custom web app
                     </span>
                   </h1>
-                  <p className="mt-3 text-base text-gray-600 dark:text-gray-300 sm:mt-5 md:text-lg lg:text-lg xl:text-xl">
+                  <p className="mt-3 text-sm text-gray-600 dark:text-gray-300 sm:mt-5 md:text-base lg:text-lg">
                     Fix the pain points in your business with a custom web app. We can build a
                     custom web app that will save your business valuable time and money.
                   </p>

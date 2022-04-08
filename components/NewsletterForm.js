@@ -35,7 +35,7 @@ const NewsletterForm = ({ title = 'Subscribe to our newsletter' }) => {
   }
 
   return (
-    <div>
+    <div className="w-full border-t border-gray-200 pt-10 dark:border-gray-700">
       <div className="pb-1 text-lg font-semibold text-gray-800 dark:text-gray-100">{title}</div>
       <form className="flex flex-col sm:flex-row" onSubmit={subscribe}>
         <div>
@@ -54,7 +54,7 @@ const NewsletterForm = ({ title = 'Subscribe to our newsletter' }) => {
             disabled={subscribed}
           />
         </div>
-        <div className="mt-2 flex w-full rounded-md shadow-sm sm:mt-0 sm:ml-3">
+        <div className="mt-2 flex rounded-md shadow-sm sm:mt-0 sm:ml-3">
           <button
             className={`w-full rounded-md bg-primary-500 py-2 px-4 font-medium text-white sm:py-0 ${
               subscribed ? 'cursor-default' : 'hover:bg-primary-700 dark:hover:bg-primary-400'

@@ -8,9 +8,10 @@ import Hero2 from '@/components/Hero2'
 import CTA from '@/components/CTA'
 import Features from '@/components/Features'
 import Reviews from '@/components/Reviews'
+import Incentives from '@/components/Incentives'
 import NewsletterForm from '@/components/NewsletterForm'
 
-const MAX_DISPLAY = 5
+const MAX_DISPLAY = 2
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
@@ -33,9 +34,9 @@ export default function Home({ posts }) {
         </div>*/}
         <Hero2 />
         <Features />
-        <Reviews />
-        <CTA />
-        {/*        <ul className="divide-y divide-gray-200 dark:divide-gray-700">
+        {/*<Reviews />*/}
+
+        <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter
@@ -85,9 +86,9 @@ export default function Home({ posts }) {
               </li>
             )
           })}
-        </ul>*/}
+        </ul>
       </div>
-      {/*      {posts.length > MAX_DISPLAY && (
+      {posts.length > MAX_DISPLAY && (
         <div className="flex justify-end text-base font-medium leading-6">
           <Link
             href="/blog"
@@ -97,10 +98,12 @@ export default function Home({ posts }) {
             All Posts &rarr;
           </Link>
         </div>
-      )}*/}
-
+      )}
+      <Incentives />
+      <CTA />
       {siteMetadata.newsletter.provider !== '' && (
-        <div className="flex items-center justify-center pt-8">
+        // <div className="flex items-center justify-center pt-8">
+        <div className="flex pt-8">
           <NewsletterForm />
         </div>
       )}

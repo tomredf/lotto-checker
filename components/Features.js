@@ -2,44 +2,39 @@ import { CheckIcon } from '@heroicons/react/outline'
 
 const features = [
   {
-    name: 'Feature 1',
+    name: 'Nothing To Install',
     description:
-      'Tempor tellus in aliquet eu et sit nulla tellus. Suspendisse est, molestie blandit quis ac. Lacus.',
+      'One of the big advantages of a web app over native apps, is that there is nothing to install ' +
+      'and they are always up-to-date, so users never have to install updates. They also work on any device.',
   },
   {
-    name: 'Feature 2',
+    name: 'Cost Effective',
     description:
-      'Ornare donec rhoncus vitae nisl velit, neque, mauris dictum duis. Nibh urna non parturient.',
+      'Much cheaper than native apps and can be deployed much faster. Onetime payment, no monthly charges unless you want us to ' +
+      'provide on going support and maintenance.',
   },
   {
-    name: 'Feature 3',
+    name: 'Secure',
     description:
-      'Etiam cras augue ornare pretium sit malesuada morbi orci, venenatis. Dictum lacus.',
+      'You control who has access to your app. You can choose to make it available to anyone or limit it to internal use only.',
   },
   {
-    name: 'Feature 4',
+    name: 'Changes & updates.',
     description:
-      'Interdum quam pulvinar turpis tortor, egestas quis diam amet, natoque. Mauris sagittis.',
+      'When you are ready to add new feature or make changes, we are here to help. We will provide cost estimates on request.',
   },
   {
-    name: 'Feature 5',
+    name: 'Built using the web tools',
     description:
-      'Ullamcorper in ipsum ac feugiat. Senectus at aliquam vulputate mollis nec. In at risus odio.',
+      'We only use the latest web technology, such as Next.js, React.js, and Tailwindcss. ' +
+      'We host everything with Vercel, the same host used by some of the biggest websites,' +
+      ' like Uber, MacDonalds, and Ticketmaster.',
   },
   {
-    name: 'Feature 6',
+    name: "Don't need a web app?",
     description:
-      'Magna a vel sagittis aliquam eu amet. Et lorem auctor quam nunc odio. Sed bibendum.',
-  },
-  {
-    name: 'Feature 7',
-    description:
-      'Sed mi, dapibus turpis orci posuere integer. A porta viverra posuere adipiscing turpis.',
-  },
-  {
-    name: 'Feature 8',
-    description:
-      'Quisque sapien nunc nisl eros. Facilisis sagittis maecenas id dignissim tristique proin sed.',
+      'No problem, we can build you a regular website or even a combination of both. Maybe you need a CMS powered website ' +
+      'that you can update yourself, we can do that too, using the latest CMS tools such as Prismic CMS.',
   },
 ]
 
@@ -47,22 +42,24 @@ export default function Features() {
   return (
     <div className="">
       <div className="mx-auto max-w-7xl py-5 px-4 sm:px-6 lg:py-12 lg:px-0">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-extrabold text-primary-500">What can we do for you? </h2>
-          <p className="mt-4 text-xl text-gray-600 dark:text-gray-300">
+        <div className="mx-auto max-w-7xl text-left">
+          <h2 className="text-xl font-extrabold text-primary-500 md:text-3xl lg:text-4xl">
+            Get a web app for your business.{' '}
+          </h2>
+          <p className="mt-4 text-sm text-gray-600 dark:text-gray-300 md:text-base">
             See what a custom web app can do for your business.
           </p>
         </div>
-        <dl className="mt-12 space-y-10 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-4 lg:gap-x-8">
+        <dl className="mt-12 space-y-10 sm:grid sm:grid-cols-1 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-8">
           {features.map((feature) => (
             <div key={feature.name} className="relative">
               <dt>
-                <CheckIcon className="absolute h-6 w-6 text-orange-500" aria-hidden="true" />
-                <p className="ml-9 text-lg font-medium leading-6 text-gray-600 dark:text-gray-300">
+                <CheckIcon className="absolute h-6 w-6 text-orange-400" aria-hidden="true" />
+                <p className="ml-9 text-sm font-medium leading-6 text-gray-600 dark:text-gray-300 md:text-base">
                   {feature.name}
                 </p>
               </dt>
-              <dd className="mt-2 ml-9 text-base text-gray-600 dark:text-gray-300">
+              <dd className="mt-2 ml-9 text-sm text-gray-600 dark:text-gray-300 md:text-base">
                 {feature.description}
               </dd>
             </div>
