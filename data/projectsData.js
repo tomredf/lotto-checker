@@ -1,9 +1,9 @@
 const projectsData = [
   {
     title: 'Proof of Delivery App',
-    description: `Th is a powerful web app, built for a building supply company. Using tablets in their trucks and at POS,
+    description: `This a powerful web app, built for a building supply company. Using tablets in their trucks and at POS,
     they can collect signatures and/or photos of the deliveries and pick ups. It is powered by a Firestore realtime database, 
-    providing instant updates on all devices. Having these signatures and photos provides proof of delivery and avoids
+    providing instant updates on all devices. Having these signatures and photos, provides proof of delivery and avoids
     problems collecting payments. Built using Next.js, Firebase, Tailwindcss, and hosted on Vercel.`,
     imgSrc: '/static/images/signature-app-hero.jpg',
     href: '',
