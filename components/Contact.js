@@ -1,5 +1,6 @@
 import { MailIcon, MenuIcon, PhoneIcon, XIcon } from '@heroicons/react/outline'
 import Image from '@/components/Image'
+import Cal from '@/components/Cal'
 
 export default function Contact() {
   return (
@@ -319,6 +320,7 @@ export default function Contact() {
                   </button>
                 </div>
               </form>
+              <Cal />
             </div>
           </div>
         </div>

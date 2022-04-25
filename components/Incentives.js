@@ -23,7 +23,7 @@ const incentives = [
 export default function Incentives() {
   return (
     <div className="">
-      <div className="mx-auto mt-10 max-w-7xl border-t border-b border-gray-200 py-10 pt-10 dark:border-gray-700 sm:px-4 lg:px-0">
+      {/*<div className="mx-auto mt-10 max-w-7xl border-t border-b border-gray-200 py-10 pt-10 dark:border-gray-700 sm:px-4 lg:px-0">
         <div className="mx-auto max-w-2xl px-0 lg:max-w-none">
           <div className="max-w-3xl">
             <h2 className="text-xl font-extrabold tracking-tight text-primary-500 md:text-3xl lg:text-4xl">
@@ -54,7 +54,7 @@ export default function Incentives() {
             ))}
           </div>
         </div>
-      </div>
+      </div>*/}
     </div>
   )
 }
