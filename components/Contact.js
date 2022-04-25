@@ -320,9 +320,9 @@ export default function Contact() {
                   </button>
                 </div>
               </form>
-              <Cal />
             </div>
           </div>
+          {/*<Cal />*/}
         </div>
       </div>
     </section>
