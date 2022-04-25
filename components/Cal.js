@@ -7,7 +7,7 @@ export default function Cal() {
         url="https://cal.com/clarasoftware/free-20-minute-consultation"
         width="650px"
         height="450px"
-        id="myId"
+        id="cal-1"
         className="myClassname"
         display="initial"
         position="relative"
