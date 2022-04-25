@@ -2,13 +2,13 @@ import Iframe from 'react-iframe'
 
 export default function Cal() {
   return (
-    <div className="">
+    <div>
       <Iframe
         url="https://cal.com/clarasoftware/free-20-minute-consultation"
         width="650px"
         height="450px"
         id="cal-1"
-        className="myClassname"
+        className=""
         display="initial"
         position="relative"
       />
