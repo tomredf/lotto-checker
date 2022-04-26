@@ -1,6 +1,7 @@
-import { MailIcon, MenuIcon, PhoneIcon, XIcon } from '@heroicons/react/outline'
+import { MailIcon, MenuIcon, PhoneIcon, XIcon, CalendarIcon } from '@heroicons/react/outline'
 import Image from '@/components/Image'
 import Cal from '@/components/Cal'
+import Link from './Link'
 
 export default function Contact() {
   return (
@@ -147,6 +148,20 @@ export default function Contact() {
                   />
                   <span className="ml-3">info@clarasoftware.com</span>
                 </dd>
+                <dt>
+                  <span className="sr-only">Book</span>
+                </dt>
+                <dd className="flex text-base text-primary-50">
+                  <CalendarIcon
+                    className="h-6 w-6 flex-shrink-0 text-primary-200 hover:text-primary-100"
+                    aria-hidden="true"
+                  />
+                  <div className="ml-3 mb-8 text-base text-primary-100 hover:text-primary-100">
+                    <Link href="https://cal.com/clarasoftware/free-20-minute-consultation">
+                      Book a free 20 minute consultation
+                    </Link>
+                  </div>
+                </dd>
               </dl>
               <ul role="list" className="mt-8 flex space-x-12">
                 <li>
@@ -203,7 +218,7 @@ export default function Contact() {
             <div className="rounded-lg py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
               <h3 className="text-warm-gray-900 text-lg font-medium">Send us a message</h3>
               <form
-                action="#"
+                action="https://usebasin.com/f/2e710ab6a758"
                 method="POST"
                 className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
               >
