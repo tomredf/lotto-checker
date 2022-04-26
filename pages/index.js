@@ -101,12 +101,11 @@ export default function Home({ posts }) {
       )}
       <Incentives />
       <CTA />
-      {siteMetadata.newsletter.provider !== '' && (
-        // <div className="flex items-center justify-center pt-8">
+      {/*      {siteMetadata.newsletter.provider !== '' && (
         <div className="flex pt-8">
           <NewsletterForm />
         </div>
-      )}
+      )}*/}
     </>
   )
 }
