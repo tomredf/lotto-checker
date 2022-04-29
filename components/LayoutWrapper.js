@@ -7,6 +7,7 @@ import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
+import toast, { Toaster } from 'react-hot-toast'
 
 const LayoutWrapper = ({ children }) => {
   return (
@@ -57,6 +58,18 @@ const LayoutWrapper = ({ children }) => {
         </header>
         <main className="mb-auto">{children}</main>
         <Footer />
+        <Toaster
+          toastOptions={{
+            className: '',
+            style: {
+              border: '3px solid #029BDF',
+              padding: '16px',
+              color: '#fff',
+              background: '#2c2c2c',
+              //background: '#029BDF'
+            },
+          }}
+        />
       </div>
     </SectionContainer>
   )
