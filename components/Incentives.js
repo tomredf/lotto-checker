@@ -46,7 +46,6 @@ export default function Incentives() {
             {incentives.map((incentive) => (
               <div key={incentive.name} className="sm:flex lg:block">
                 <div className="sm:flex-shrink-0">
-                  {/*<img className="h-16 w-16" src={incentive.imageSrc} alt="" />*/}
                   <Image
                     alt={incentive.name}
                     src={incentive.imageSrc}
