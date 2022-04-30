@@ -10,7 +10,8 @@ const ContentSecurityPolicy = `
   img-src * blob: data:;
   media-src 'none';
   connect-src *;
-  frame-src cal.com
+  frame-src cal.com;
+  font-src 'self' fonts.gstatic.com
 `
 //font-src 'self';
 const securityHeaders = [
