@@ -1,6 +1,6 @@
 const siteMetadata = {
   title: 'Clara Software',
-  author: 'Clara Software',
+  author: 'Dermot Fitzpatrick',
   headerTitle: 'Clara Software',
   description: 'Solutions for small business',
   language: 'en-ca',
@@ -10,7 +10,7 @@ const siteMetadata = {
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
-  email: 'tomredf@gmail.com',
+  email: 'info@clarasoftware.com',
   github: 'https://github.com/tomredf',
   twitter: 'https://twitter.com/dermotf',
   //facebook: 'https://facebook.com',
