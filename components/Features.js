@@ -44,9 +44,9 @@ export default function Features() {
       <div className="mx-auto max-w-7xl py-5 px-4 sm:px-6 lg:py-12 lg:px-0">
         <div className="mx-auto max-w-7xl text-left">
           <h2 className="text-xl font-extrabold text-primary-500 md:text-3xl lg:text-4xl">
-            Get a web app for your business.{' '}
+            The benefits of web apps{' '}
           </h2>
-          <p className="mt-4 text-sm text-gray-600 dark:text-gray-300 md:text-base">
+          <p className="mt-4 text-sm text-gray-600 dark:text-gray-300 md:text-lg">
             See what a custom web app can do for your business.
           </p>
         </div>
