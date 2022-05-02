@@ -6,9 +6,9 @@ export default function CTA() {
     <div className="">
       <div className="mx-auto max-w-7xl py-5 px-0 lg:flex lg:items-center lg:justify-between lg:px-0 lg:pt-10">
         <h2 className="text-xl font-extrabold tracking-tight text-primary-500 md:text-3xl lg:text-4xl">
-          <span className="block">Ready to get started?</span>
+          <span className="block">Let's start taking your</span>
           <span className="block text-lg text-orange-400 md:text-2xl lg:text-3xl">
-            Contact us today.
+            business to new heights
           </span>
         </h2>
         <div className="mt-8 lg:mt-0">
