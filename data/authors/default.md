@@ -8,21 +8,24 @@ twitter: https://twitter.com/dermotf
 github: https://github.com/tomredf
 ---
 
-At Clara Software, we specialize in high-quality custom web apps. We build secure, scalable, and user-friendly products that are designed to increase your productivity and drive your business forward.
+Clara Software is a company devoted to creating simple, useful and affordable web applications that solve real problems for small business. We design our own software, with a focus on making things easy for non-techy people.
 
-Based in Vancouver BC Canada. We started 25 years ago with Visual Basic and then MS Access.
-After that it was Lua and then MS SQL Server. But now we mainly use Javascript.
+We specialize in high-quality custom web apps. We build secure, scalable, and user-friendly products that are designed to increase your productivity and drive your business forward.
 
-Here is a list of my current tools/frameworks/services.
+Based in Vancouver BC Canada. We started 25 years ago with Visual Basic and MS Access.
+We now use the latest web development tools and services, some of which are listed below.
 
 - Next.js
+- Gatsby.js
 - React.js
 - Tailwindcss
 - Python
 - Firebase `Database, hosting, cloud functions and more...`
-- Vercel `Hosting`
+- Vercel `Hosting, cloud functions`
 - Webstorm `IDE`
 - VS Code `IDE`
 - Userbase `Database`
 
-Thank you for taking the time to read. If you have any questions or want to see more from me, please [follow me on Twitter](https://twitter.com/dermotf)
+[//]: # 'Thank you for taking the time to read. If you have any questions or want to see more from me, please '
+
+[Follow us on Twitter](https://twitter.com/dermotf)

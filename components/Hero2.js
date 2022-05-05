@@ -17,7 +17,7 @@ export default function Example() {
                 <div className="lg:py-8">
                   <h1 className="mt-0 text-3xl font-extrabold tracking-tight text-primary-500 sm:mt-0 sm:text-4xl lg:mt-0 xl:text-6xl">
                     <span className="block">Save time & money</span>
-                    <span className="block text-2xl text-orange-400 md:text-3xl xl:text-5xl">
+                    <span className="block text-2xl text-primary-500 md:text-3xl xl:text-5xl">
                       with a custom web app
                     </span>
                   </h1>
