@@ -5,7 +5,7 @@ const projectsData = [
     they can collect signatures and/or photos of the deliveries and pick ups. It is powered by a Firestore realtime database, 
     providing instant updates on all devices. Having these signatures and photos, provides proof of delivery and avoids
     problems collecting payments. Built using Next.js, Firebase, Tailwindcss, and hosted on Vercel.`,
-    imgSrc: '/static/images/signature-app-hero.jpg',
+    imgSrc: '/static/images/proof-of-delivery-project.svg',
     href: '',
   },
   {
@@ -14,7 +14,7 @@ const projectsData = [
     Enter the approximate height and length of your retaining wall and get an instant estimate of materials 
     (number of blocks, Small extenders and Large extenders for gravity walls) for your retaining wall.
     This app was built using Next.js, Tailwindcss, Userbase, and hosted on Vercel.`,
-    imgSrc: '/static/images/magnumstone-wall-estimator.jpg',
+    imgSrc: '/static/images/magnum-project.svg',
     href: 'https://magnumstone.com/retaining-wall-instant-estimator/',
   },
   {
@@ -22,7 +22,7 @@ const projectsData = [
     description: `This a free web app that lets you extract images from PDF files.
     I often found myself needing this, and I always struggled to find a solution.
     Built using Python, Flask, Tailwindcss and hosted on Replit. This is completely free, and has no ads 😀`,
-    imgSrc: '/static/images/extract-pdf-images.jpg',
+    imgSrc: '/static/images/extract-pdf-images-project.svg',
     href: 'https://www.extractpdfimages.com',
   },
   {
@@ -30,7 +30,7 @@ const projectsData = [
     description: `wallcalculator.com was created for CornerStone Wall Solutions to help their licensees' 
     and contractors quickly estimate the amount of geogrid and other materials required for a retaining wall.
     This app was built using Svelte.js, Tailwindcss, Userbase, and hosted on Vercel.`,
-    imgSrc: '/static/images/wall-calculator.jpg',
+    imgSrc: '/static/images/wall-app-project.svg',
     href: 'https://wallcalculator.com',
   },
   {
@@ -40,7 +40,7 @@ const projectsData = [
     This would take at least 5 - 10 minutes. Now they can give a quote in
     about 15 seconds. Quotes can be saved to HTML, Image, and PDF files for easy emailing.
     Built using Svelte.js, Bulma CSS, and hosted on Vercel.`,
-    imgSrc: '/static/images/bulk-quote.jpg',
+    imgSrc: '/static/images/quote-app-project.svg',
     href: '',
   },
 ]
