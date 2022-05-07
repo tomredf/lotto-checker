@@ -34,7 +34,7 @@ export default function Example() {
                 <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
                   <Image
                     alt={'Hero image'}
-                    src={'/static/images/hero2.svg'}
+                    src={'/static/images/hero3.svg'}
                     className="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
                     width={800}
                     height={600}
