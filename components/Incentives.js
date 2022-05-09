@@ -37,7 +37,7 @@ export default function Incentives() {
               Here are some examples
             </h2>
             <p className="mt-4 text-sm text-gray-600 dark:text-gray-300 md:text-base">
-              Here are a few examples of the kind of solutions we can provide for you small
+              Here are a few examples of the kind of solutions we can provide for your small
               business. These are the types of things that up until recently, only larger companies
               could afford.
             </p>
