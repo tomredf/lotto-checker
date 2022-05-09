@@ -19,19 +19,19 @@ const features = [
       'You control who has access to your app. You can choose to make it available to anyone or limit it to internal use only.',
   },
   {
-    name: 'Changes & updates.',
+    name: 'Changes & Updates',
     description:
       'When you are ready to add new feature or make changes, we are here to help. We will provide cost estimates on request.',
   },
   {
-    name: 'Built using the web tools',
+    name: 'Built Using The Latest Web Tools',
     description:
       'We only use the latest web technology, such as Next.js, React.js, and Tailwindcss. ' +
       'We host everything with Vercel, the same host used by some of the biggest websites,' +
       ' like Uber, MacDonalds, and Ticketmaster.',
   },
   {
-    name: "Don't need a web app?",
+    name: "Don't Need a Web App?",
     description:
       'No problem, we can build you a regular website or even a combination of both. Maybe you need a CMS powered website ' +
       'that you can update yourself, we can do that too, using the latest CMS tools such as Prismic CMS.',

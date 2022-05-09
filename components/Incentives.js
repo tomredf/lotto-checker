@@ -8,22 +8,22 @@ const incentives = [
     description:
       'Want an easy way to text customers? Want a centralized place where customers can text message you? We can ' +
       'build you a stand-alone app or one you can integrate into your existing website. No more having your employees ' +
-      'using there personal mobile phones to text customers',
+      'using their personal mobile phones to text customers',
   },
   {
     name: 'Signature / Image Capture',
     imageSrc: '/static/images/text-message-icon.png',
     description:
       'Need proof of delivery or proof of completion? We can build you a custom solution that will let you staff collect digital signatures' +
-      " and/or photos using mobile phones or tablets. Al manged from a central admin screen. It can even work off-line so you don't have to pay for data. ",
+      " and/or photos using mobile phones or tablets. All manged from a central admin screen. It can even work off-line so you don't have to pay for data. ",
   },
   {
     name: 'Custom Forms / Data Collection',
     imageSrc: '/static/images/text-message-icon.png',
     description:
-      'Many businesses have very specific needs for data collection. and customer inquires etc. Things like quote requests can involve collecting ' +
+      'Many businesses have very specific needs for data collection and customer inquires etc. Things like quote requests can involve collecting ' +
       'very specific data from customers. We can build a stand-alone form or one that integrates into your existing website. Can include email and text message notifications.' +
-      'Everything can easily be manged from a custom admin screen.',
+      ' Everything can easily be manged from a custom admin screen.',
   },
 ]
 
@@ -34,7 +34,7 @@ export default function Incentives() {
         <div className="mx-auto max-w-2xl px-0 lg:max-w-none">
           <div className="max-w-3xl">
             <h2 className="text-xl font-extrabold tracking-tight text-primary-500 md:text-3xl lg:text-4xl">
-              Here are some examples
+              Here are some examples:
             </h2>
             <p className="mt-4 text-sm text-gray-600 dark:text-gray-300 md:text-base">
               Here are a few examples of the kind of solutions we can provide for your small
