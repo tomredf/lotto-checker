@@ -11,7 +11,7 @@ const features = [
     name: 'Cost Effective',
     description:
       'Much cheaper than native apps and can be deployed much faster. Onetime payment, no monthly charges unless you want us to ' +
-      'provide on going support and maintenance.',
+      'provide ongoing support and maintenance.',
   },
   {
     name: 'Secure',
