@@ -2,7 +2,7 @@ const siteMetadata = {
   title: 'Clara Software',
   author: 'Dermot Fitzpatrick',
   headerTitle: 'Clara Software',
-  description: 'Solutions for small business',
+  description: 'Solutions for small businesses',
   language: 'en-ca',
   theme: 'system', // system, dark or light
   siteUrl: 'https://clarasoftware.com',
