@@ -4,7 +4,7 @@ const projectsData = [
     description: `This a powerful web app, built for a building supply company. Using tablets in their trucks and at POS,
     they can collect signatures and/or photos of the deliveries and pick ups. It is powered by a Firestore realtime database, 
     providing instant updates on all devices. Having these signatures and photos, provides proof of delivery and avoids
-    problems collecting payments. Built using Next.js, Firebase, Tailwindcss, and hosted on Vercel.`,
+    problems collecting payments. Built using Next.js, Firebase, Tailwindcss, and hosted on Vercel. Demo available on request.`,
     imgSrc: '/static/images/proof-of-delivery-project.svg',
     href: '',
   },
