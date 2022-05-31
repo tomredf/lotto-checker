@@ -3,16 +3,21 @@ import Link from './Link'
 import siteMetadata from '@/data/siteMetadata'
 import { useCSVReader } from 'react-papaparse'
 import { usePapaParse } from 'react-papaparse'
+import { continueFromInitialStream } from 'next/dist/server/node-web-streams-helper'
 
 export default function Checker() {
   const { readRemoteFile } = usePapaParse()
   const [numsToCheck, setNumsToCheck] = useState('')
+  const [numsToCheckArray, setNumsToCheckArray] = useState([])
   const [results, setResults] = useState([])
   const [name, setName] = useState('')
   const [icon, setIcon] = useState('/static/images/default.png')
+  const [busy, setBusy] = useState(false)
 
   const getNumsArray = (numString) => {
-    return numString.split(' ').map(Number)
+    const res = numString.split(' ').map(Number)
+    setNumsToCheckArray(res)
+    return res
   }
 
   const build649Draws = (draws) => {
@@ -70,6 +75,32 @@ export default function Checker() {
     return newDraws
   }
 
+  const buildGrandDraws = (draws) => {
+    let newDraws = []
+    let arrayLength = draws.length - 1
+    let dt = ''
+    let bonus = 0
+    let nums = []
+    let i = 0
+    for (i = 0; i < arrayLength; i++) {
+      nums = []
+      dt = draws[i]['DRAW DATE']
+      nums[0] = parseInt(draws[i]['NUMBER DRAWN 1'])
+      nums[1] = parseInt(draws[i]['NUMBER DRAWN 2'])
+      nums[2] = parseInt(draws[i]['NUMBER DRAWN 3'])
+      nums[3] = parseInt(draws[i]['NUMBER DRAWN 4'])
+      nums[4] = parseInt(draws[i]['NUMBER DRAWN 5'])
+      nums[5] = parseInt(draws[i]['GRAND NUMBER'])
+      let draw = {}
+      draw.drawDate = dt
+      draw.numbersDrawn = nums
+      draw.bonusNumber = bonus
+      newDraws[i] = draw
+    }
+
+    return newDraws
+  }
+
   const isSubset = (arr1, arr2, m, n) => {
     let i = 0
     let j = 0
@@ -105,9 +136,12 @@ export default function Checker() {
     }
 
     setResults(res)
+    setBusy(false)
   }
 
   const handleRead649 = () => {
+    reset()
+    setBusy(true)
     setName('649')
     setIcon('/static/images/649.png')
     readRemoteFile('/static/649.csv', {
@@ -123,6 +157,8 @@ export default function Checker() {
   }
 
   const handleReadBC49 = () => {
+    reset()
+    setBusy(true)
     setName('BC49')
     setIcon('/static/images/bc49.png')
     readRemoteFile('/static/BC49.csv', {
@@ -138,6 +174,8 @@ export default function Checker() {
   }
 
   const handleReadMax = () => {
+    reset()
+    setBusy(true)
     setName('Max')
     setIcon('/static/images/max.png')
     readRemoteFile('/static/MAX.csv', {
@@ -150,6 +188,33 @@ export default function Checker() {
         checkNums(nums, draws)
       },
     })
+  }
+
+  const handleReadDailyGrand = () => {
+    reset()
+    setBusy(true)
+    setName('Daily Grand')
+    setIcon('/static/images/dailygrand.png')
+    readRemoteFile('/static/DailyGrand.csv', {
+      header: true,
+      download: true,
+      dynamicTyping: true,
+      complete: (results) => {
+        const nums = getNumsArray(numsToCheck)
+        const draws = buildGrandDraws(Array.from(results.data))
+        checkNums(nums, draws)
+      },
+    })
+  }
+
+  const isSpecial = (n) => {
+    return numsToCheckArray.includes(n)
+  }
+
+  const reset = () => {
+    setName('')
+    setIcon('/static/images/default.png')
+    setResults([])
   }
 
   //////////////////////////////////////////////////////////
@@ -209,6 +274,16 @@ export default function Checker() {
               Check Max
             </Link>
           </div>
+          <div className="inline-flex rounded-md shadow">
+            <Link
+              href="#"
+              onClick={() => handleReadDailyGrand()}
+              aria-label="Contact"
+              className="mr-2 inline-flex items-center justify-center rounded-md border border-transparent bg-primary-500 px-4 py-2 text-base font-medium text-white hover:bg-primary-600"
+            >
+              Check Grand
+            </Link>
+          </div>
         </div>
       </div>
       {/*      {results && results.length > 0 && (
@@ -242,7 +317,7 @@ export default function Checker() {
                   scope="col"
                   className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-50 sm:pl-6"
                 >
-                  <div className="inline-flex items-center">
+                  <div className="inline-flex items-center align-bottom">
                     <img src={icon} height="30" alt="Game icon" />
                     <div className="ml-4 items-center text-3xl">Results ({results.length})</div>
                   </div>
@@ -279,7 +354,7 @@ export default function Checker() {
                 )}
               </tr>
             </thead>
-            {results && results.length > 0 && (
+            {!busy && results && results.length > 0 && (
               <tbody className="divide-y divide-gray-200 bg-white dark:divide-gray-600 dark:bg-gray-500">
                 {results.map((draw) => (
                   <tr
@@ -290,17 +365,31 @@ export default function Checker() {
                       {draw.drawDate}
                     </td>
                     {draw.numbersDrawn.map((num, index) => (
-                      <td
-                        key={index}
-                        className="px-3 py-3 text-center text-sm text-gray-500 dark:text-gray-200 lg:table-cell"
-                      >
-                        {num}
-                      </td>
+                      <>
+                        {isSpecial(num) ? (
+                          <td
+                            key={index}
+                            className="px-3 py-3 text-center text-sm text-primary-500 dark:text-secondary-500 lg:table-cell"
+                          >
+                            <div className="min-w-6 min-h-6 border-b border-primary-500 dark:border-secondary-500">
+                              {num}
+                            </div>
+                          </td>
+                        ) : (
+                          <td
+                            key={index}
+                            className="px-3 py-3 text-center text-sm font-normal text-gray-500 dark:text-gray-200 lg:table-cell"
+                          >
+                            {num}
+                          </td>
+                        )}
+                      </>
                     ))}
                   </tr>
                 ))}
               </tbody>
             )}
+            {busy && <div className="p-4">Checking...</div>}
           </table>
         </div>
       </div>
