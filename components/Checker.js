@@ -9,6 +9,7 @@ export default function Checker() {
   const [numsToCheck, setNumsToCheck] = useState('')
   const [results, setResults] = useState([])
   const [name, setName] = useState('')
+  const [icon, setIcon] = useState('/static/images/default.png')
 
   const getNumsArray = (numString) => {
     return numString.split(' ').map(Number)
@@ -108,6 +109,7 @@ export default function Checker() {
 
   const handleRead649 = () => {
     setName('649')
+    setIcon('/static/images/649.png')
     readRemoteFile('/static/649.csv', {
       header: true,
       download: true,
@@ -122,6 +124,7 @@ export default function Checker() {
 
   const handleReadBC49 = () => {
     setName('BC49')
+    setIcon('/static/images/bc49.png')
     readRemoteFile('/static/BC49.csv', {
       header: true,
       download: true,
@@ -136,6 +139,7 @@ export default function Checker() {
 
   const handleReadMax = () => {
     setName('Max')
+    setIcon('/static/images/max.png')
     readRemoteFile('/static/MAX.csv', {
       header: true,
       download: true,
@@ -238,7 +242,10 @@ export default function Checker() {
                   scope="col"
                   className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-50 sm:pl-6"
                 >
-                  {name} Results ({results.length})
+                  <div className="inline-flex items-center">
+                    <img src={icon} height="30" alt="Game icon" />
+                    <div className="ml-4 items-center text-3xl">Results ({results.length})</div>
+                  </div>
                 </th>
                 <th
                   scope="col"
