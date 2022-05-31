@@ -54,7 +54,7 @@ export default function Features() {
           {features.map((feature) => (
             <div key={feature.name} className="relative">
               <dt>
-                <CheckIcon className="absolute h-6 w-6 text-orange-400" aria-hidden="true" />
+                <CheckIcon className="absolute h-6 w-6 text-secondary-400" aria-hidden="true" />
                 <p className="ml-9 text-sm font-medium leading-6 text-gray-600 dark:text-gray-300 md:text-base">
                   {feature.name}
                 </p>
