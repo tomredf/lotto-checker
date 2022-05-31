@@ -3,12 +3,12 @@ import Link from './Link'
 import siteMetadata from '@/data/siteMetadata'
 import { useCSVReader } from 'react-papaparse'
 import { usePapaParse } from 'react-papaparse'
-//import { dateSortDesc } from '@/lib/mdx'
 
 export default function Checker() {
   const { readRemoteFile } = usePapaParse()
   const [numsToCheck, setNumsToCheck] = useState('')
   const [results, setResults] = useState([])
+  const [name, setName] = useState('')
 
   const getNumsArray = (numString) => {
     return numString.split(' ').map(Number)
@@ -37,7 +37,35 @@ export default function Checker() {
       draw.bonusNumber = bonus
       newDraws[i] = draw
     }
-    //console.log('Draws', newDraws)
+
+    return newDraws
+  }
+
+  const buildMaxDraws = (draws) => {
+    let newDraws = []
+    let arrayLength = draws.length - 1
+    let dt = ''
+    let bonus = 0
+    let nums = []
+    let i = 0
+    for (i = 0; i < arrayLength; i++) {
+      nums = []
+      dt = draws[i]['DRAW DATE']
+      bonus = parseInt(draws[i]['BONUS NUMBER'])
+      nums[0] = parseInt(draws[i]['NUMBER DRAWN 1'])
+      nums[1] = parseInt(draws[i]['NUMBER DRAWN 2'])
+      nums[2] = parseInt(draws[i]['NUMBER DRAWN 3'])
+      nums[3] = parseInt(draws[i]['NUMBER DRAWN 4'])
+      nums[4] = parseInt(draws[i]['NUMBER DRAWN 5'])
+      nums[5] = parseInt(draws[i]['NUMBER DRAWN 6'])
+      nums[6] = parseInt(draws[i]['NUMBER DRAWN 7'])
+      let draw = {}
+      draw.drawDate = dt
+      draw.numbersDrawn = nums
+      draw.bonusNumber = bonus
+      newDraws[i] = draw
+    }
+
     return newDraws
   }
 
@@ -75,25 +103,52 @@ export default function Checker() {
       }
     }
 
-    //console.log('Result', res)
     setResults(res)
   }
 
   const handleRead649 = () => {
+    setName('649')
     readRemoteFile('/static/649.csv', {
       header: true,
       download: true,
       dynamicTyping: true,
       complete: (results) => {
-        //console.log('---------------------------')
         const nums = getNumsArray(numsToCheck)
-        //console.log('Nums To Check', nums)
         const draws = build649Draws(Array.from(results.data))
         checkNums(nums, draws)
-        //console.log('---------------------------')
       },
     })
   }
+
+  const handleReadBC49 = () => {
+    setName('BC49')
+    readRemoteFile('/static/BC49.csv', {
+      header: true,
+      download: true,
+      dynamicTyping: true,
+      complete: (results) => {
+        const nums = getNumsArray(numsToCheck)
+        const draws = build649Draws(Array.from(results.data))
+        checkNums(nums, draws)
+      },
+    })
+  }
+
+  const handleReadMax = () => {
+    setName('Max')
+    readRemoteFile('/static/MAX.csv', {
+      header: true,
+      download: true,
+      dynamicTyping: true,
+      complete: (results) => {
+        const nums = getNumsArray(numsToCheck)
+        const draws = buildMaxDraws(Array.from(results.data))
+        checkNums(nums, draws)
+      },
+    })
+  }
+
+  //////////////////////////////////////////////////////////
 
   return (
     <div className="">
@@ -133,7 +188,7 @@ export default function Checker() {
           <div className="inline-flex rounded-md shadow">
             <Link
               href="#"
-              onClick={() => handleRead649()}
+              onClick={() => handleReadBC49()}
               aria-label="Contact"
               className="mr-2 inline-flex items-center justify-center rounded-md border border-transparent bg-primary-500 px-4 py-2 text-base font-medium text-white hover:bg-primary-600"
             >
@@ -143,7 +198,7 @@ export default function Checker() {
           <div className="inline-flex rounded-md shadow">
             <Link
               href="#"
-              onClick={() => handleRead649()}
+              onClick={() => handleReadMax()}
               aria-label="Contact"
               className="mr-2 inline-flex items-center justify-center rounded-md border border-transparent bg-primary-500 px-4 py-2 text-base font-medium text-white hover:bg-primary-600"
             >
@@ -183,7 +238,7 @@ export default function Checker() {
                   scope="col"
                   className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-50 sm:pl-6"
                 >
-                  Results
+                  {name} Results ({results.length})
                 </th>
                 <th
                   scope="col"
@@ -209,6 +264,12 @@ export default function Checker() {
                   scope="col"
                   className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
                 ></th>
+                {name === 'Max' && (
+                  <th
+                    scope="col"
+                    className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                  ></th>
+                )}
               </tr>
             </thead>
             {results && results.length > 0 && (
@@ -224,7 +285,7 @@ export default function Checker() {
                     {draw.numbersDrawn.map((num, index) => (
                       <td
                         key={index}
-                        className="px-3 py-3 text-center text-sm text-gray-500 dark:text-gray-100 lg:table-cell"
+                        className="px-3 py-3 text-center text-sm text-gray-500 dark:text-gray-200 lg:table-cell"
                       >
                         {num}
                       </td>
