@@ -309,13 +309,13 @@ export default function Checker() {
             </p>
           </div>
         </div>*/}
-        <div className="-mx-4 mt-4 max-h-[540px] max-w-2xl overflow-y-scroll rounded-md shadow sm:-mx-6 md:mx-0">
+        <div className="-mx-4 mt-4 max-h-[540px] max-w-4xl overflow-y-scroll rounded-md shadow sm:-mx-6 md:mx-0">
           <table className="min-w-full divide-y divide-gray-300 dark:divide-gray-600">
             <thead className="bg-gray-50 dark:bg-gray-600">
               <tr>
                 <th
                   scope="col"
-                  className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-50 sm:pl-6"
+                  className="sticky top-0 z-10 bg-gray-50 py-3 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:bg-gray-600 dark:text-gray-50 sm:pl-6"
                 >
                   <div className="inline-flex items-center align-bottom">
                     <img src={icon} height="30" alt="Game icon" />
@@ -324,32 +324,32 @@ export default function Checker() {
                 </th>
                 <th
                   scope="col"
-                  className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 lg:table-cell"
+                  className="sticky top-0 z-10 bg-gray-50 px-3 py-3 text-left text-sm font-semibold text-gray-900 dark:bg-gray-600 lg:table-cell"
                 ></th>
                 <th
                   scope="col"
-                  className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:table-cell"
+                  className="sticky top-0 z-10 bg-gray-50 px-3 py-3 text-left text-sm font-semibold text-gray-900 dark:bg-gray-600 sm:table-cell"
                 ></th>
                 <th
                   scope="col"
-                  className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                  className="sticky top-0 z-10 bg-gray-50 px-3 py-3 text-left text-sm font-semibold text-gray-900 dark:bg-gray-600"
                 ></th>
                 <th
                   scope="col"
-                  className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                  className="sticky top-0 z-10 bg-gray-50 px-3 py-3 text-left text-sm font-semibold text-gray-900 dark:bg-gray-600"
                 ></th>
                 <th
                   scope="col"
-                  className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                  className="sticky top-0 z-10 bg-gray-50 px-3 py-3 text-left text-sm font-semibold text-gray-900 dark:bg-gray-600"
                 ></th>
                 <th
                   scope="col"
-                  className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                  className="sticky top-0 z-10 bg-gray-50 px-3 py-3 text-left text-sm font-semibold text-gray-900 dark:bg-gray-600"
                 ></th>
                 {name === 'Max' && (
                   <th
                     scope="col"
-                    className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                    className="sticky top-0 z-10 bg-gray-50 px-3 py-3 text-left text-sm font-semibold text-gray-900 dark:bg-gray-600"
                   ></th>
                 )}
               </tr>
@@ -361,7 +361,7 @@ export default function Checker() {
                     key={draw.drawDate}
                     className="divide-x divide-gray-200 bg-white dark:divide-gray-600 dark:bg-gray-500"
                   >
-                    <td className="w-full max-w-0 py-3 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-gray-100 sm:w-auto sm:max-w-none sm:pl-6">
+                    <td className="w-full max-w-0 py-2 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-gray-100 sm:w-auto sm:max-w-none sm:pl-6">
                       {draw.drawDate}
                     </td>
                     {draw.numbersDrawn.map((num, index) => (
@@ -369,7 +369,7 @@ export default function Checker() {
                         {isSpecial(num) ? (
                           <td
                             key={index}
-                            className="px-3 py-3 text-center text-sm text-primary-500 dark:text-secondary-500 lg:table-cell"
+                            className="px-3 py-2 text-center text-sm text-primary-500 dark:text-secondary-500 lg:table-cell"
                           >
                             <div className="min-w-6 min-h-6 border-b border-primary-500 dark:border-secondary-500">
                               {num}
@@ -378,7 +378,7 @@ export default function Checker() {
                         ) : (
                           <td
                             key={index}
-                            className="px-3 py-3 text-center text-sm font-normal text-gray-500 dark:text-gray-200 lg:table-cell"
+                            className="px-3 py-2 text-center text-sm font-normal text-gray-500 dark:text-gray-200 lg:table-cell"
                           >
                             {num}
                           </td>

@@ -34,7 +34,7 @@ input:-webkit-autofill:focus {
 /* Track */
 ::-webkit-scrollbar-track {
   border-radius: 100vh;
-  background: #1f2937;
+  background: #8fa271;
 }
 
 /* Handle */
