@@ -54,22 +54,26 @@ export default function Viewer() {
     let bonus = 0
     let nums = []
     let i = 0
+
     for (i = 0; i < arrayLength; i++) {
-      nums = []
-      dt = draws[i]['DRAW DATE']
       bonus = parseInt(draws[i]['BONUS NUMBER'])
-      nums[0] = parseInt(draws[i]['NUMBER DRAWN 1'])
-      nums[1] = parseInt(draws[i]['NUMBER DRAWN 2'])
-      nums[2] = parseInt(draws[i]['NUMBER DRAWN 3'])
-      nums[3] = parseInt(draws[i]['NUMBER DRAWN 4'])
-      nums[4] = parseInt(draws[i]['NUMBER DRAWN 5'])
-      nums[5] = parseInt(draws[i]['NUMBER DRAWN 6'])
-      nums[6] = parseInt(draws[i]['NUMBER DRAWN 7'])
-      let draw = {}
-      draw.drawDate = dt
-      draw.numbersDrawn = nums
-      draw.bonusNumber = bonus
-      newDraws[i] = draw
+      if (bonus > 0) {
+        nums = []
+        dt = draws[i]['DRAW DATE']
+
+        nums[0] = parseInt(draws[i]['NUMBER DRAWN 1'])
+        nums[1] = parseInt(draws[i]['NUMBER DRAWN 2'])
+        nums[2] = parseInt(draws[i]['NUMBER DRAWN 3'])
+        nums[3] = parseInt(draws[i]['NUMBER DRAWN 4'])
+        nums[4] = parseInt(draws[i]['NUMBER DRAWN 5'])
+        nums[5] = parseInt(draws[i]['NUMBER DRAWN 6'])
+        nums[6] = parseInt(draws[i]['NUMBER DRAWN 7'])
+        let draw = {}
+        draw.drawDate = dt
+        draw.numbersDrawn = nums
+        draw.bonusNumber = bonus
+        newDraws[i] = draw
+      }
     }
 
     return newDraws
@@ -84,6 +88,7 @@ export default function Viewer() {
     let i = 0
     for (i = 0; i < arrayLength; i++) {
       nums = []
+
       dt = draws[i]['DRAW DATE']
       nums[0] = parseInt(draws[i]['NUMBER DRAWN 1'])
       nums[1] = parseInt(draws[i]['NUMBER DRAWN 2'])
