@@ -48,23 +48,29 @@ export default function Viewer() {
   }
 
   const buildMaxDraws = (draws) => {
+    // Because the Max has multiple winning numbers, we only want the main ones that includes a bonus number.
+    // This will be the jackpot numbers and not the Max Millions numbers
+    const filteredDraws = draws.filter(function (draw) {
+      return draw['BONUS NUMBER'] > 0
+    })
     let newDraws = []
-    let arrayLength = draws.length - 1
+    let arrayLength = filteredDraws.length - 1
     let dt = ''
     let bonus = 0
     let nums = []
     let i = 0
+
     for (i = 0; i < arrayLength; i++) {
       nums = []
-      dt = draws[i]['DRAW DATE']
-      bonus = parseInt(draws[i]['BONUS NUMBER'])
-      nums[0] = parseInt(draws[i]['NUMBER DRAWN 1'])
-      nums[1] = parseInt(draws[i]['NUMBER DRAWN 2'])
-      nums[2] = parseInt(draws[i]['NUMBER DRAWN 3'])
-      nums[3] = parseInt(draws[i]['NUMBER DRAWN 4'])
-      nums[4] = parseInt(draws[i]['NUMBER DRAWN 5'])
-      nums[5] = parseInt(draws[i]['NUMBER DRAWN 6'])
-      nums[6] = parseInt(draws[i]['NUMBER DRAWN 7'])
+      dt = filteredDraws[i]['DRAW DATE']
+      bonus = parseInt(filteredDraws[i]['BONUS NUMBER'])
+      nums[0] = parseInt(filteredDraws[i]['NUMBER DRAWN 1'])
+      nums[1] = parseInt(filteredDraws[i]['NUMBER DRAWN 2'])
+      nums[2] = parseInt(filteredDraws[i]['NUMBER DRAWN 3'])
+      nums[3] = parseInt(filteredDraws[i]['NUMBER DRAWN 4'])
+      nums[4] = parseInt(filteredDraws[i]['NUMBER DRAWN 5'])
+      nums[5] = parseInt(filteredDraws[i]['NUMBER DRAWN 6'])
+      nums[6] = parseInt(filteredDraws[i]['NUMBER DRAWN 7'])
       let draw = {}
       draw.drawDate = dt
       draw.numbersDrawn = nums
@@ -97,7 +103,7 @@ export default function Viewer() {
       draw.bonusNumber = bonus
       newDraws[i] = draw
     }
-
+    console.log(newDraws)
     return newDraws
   }
 
@@ -112,13 +118,11 @@ export default function Viewer() {
   }
 
   const pickNums = (numCount, numPlays, pastDraws, game) => {
-    //let isIncluded = false
-    //let arrayLength = 10
     let res = []
     let n = 0
 
     const draws = pastDraws.reverse()
-
+    console.log(draws)
     const a1 = draws[0].numbersDrawn
     const a2 = draws[1].numbersDrawn
     const a3 = draws[2].numbersDrawn
@@ -133,8 +137,6 @@ export default function Viewer() {
     const numPool = [].concat.apply([], [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10])
     //console.log('Num pool', numPool)
     const numPoolUnique = [...new Set(numPool)]
-    //console.log('Num pool unique', numPoolUnique)
-    //const randomElement = array[Math.floor(Math.random() * array.length)]
 
     let randomPlay = []
 
