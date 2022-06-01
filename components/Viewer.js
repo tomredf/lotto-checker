@@ -313,7 +313,7 @@ export default function Viewer() {
             </p>
           </div>
         </div>*/}
-        <div className="-mx-4 mt-4 max-h-[540px] max-w-2xl overflow-y-scroll rounded-md shadow sm:-mx-6 md:mx-0">
+        <div className="-mx-4 mt-4 max-h-[55vh] max-w-2xl overflow-y-scroll rounded-md shadow sm:-mx-6 md:mx-0">
           <table className="min-w-full divide-y divide-gray-300 dark:divide-gray-600">
             <thead className="bg-gray-50 dark:bg-gray-600">
               <tr>
