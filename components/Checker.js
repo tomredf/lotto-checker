@@ -232,7 +232,7 @@ export default function Checker() {
           <label htmlFor="nums-to-check" className="text-warm-gray-900 block text-sm font-medium">
             Numbers to check
           </label>
-          <div className="mt-1">
+          <div className="mt-3">
             <input
               type="text"
               name="nums-to-check"
@@ -243,8 +243,8 @@ export default function Checker() {
             />
           </div>
         </div>
-        <div className="mt-8 lg:mt-5">
-          <div className="inline-flex rounded-md shadow">
+        <div className="mt-6 lg:mt-5">
+          <div className="mt-3 inline-flex rounded-md shadow">
             <Link
               href="#"
               onClick={() => handleRead649()}
@@ -254,7 +254,7 @@ export default function Checker() {
               Check 649
             </Link>
           </div>
-          <div className="inline-flex rounded-md shadow">
+          <div className="mt-3 inline-flex rounded-md shadow">
             <Link
               href="#"
               onClick={() => handleReadBC49()}
@@ -264,7 +264,7 @@ export default function Checker() {
               Check BC49
             </Link>
           </div>
-          <div className="inline-flex rounded-md shadow">
+          <div className="mt-3 inline-flex rounded-md shadow">
             <Link
               href="#"
               onClick={() => handleReadMax()}
@@ -274,12 +274,12 @@ export default function Checker() {
               Check Max
             </Link>
           </div>
-          <div className="inline-flex rounded-md shadow">
+          <div className="mt-3 inline-flex rounded-md shadow">
             <Link
               href="#"
               onClick={() => handleReadDailyGrand()}
               aria-label="Contact"
-              className="mr-2 inline-flex items-center justify-center rounded-md border border-transparent bg-primary-500 px-4 py-2 text-base font-medium text-white hover:bg-primary-600"
+              className="mr-2 inline-flex items-center justify-center rounded-md border border-transparent bg-primary-500 px-3.5 py-2 text-base font-medium text-white hover:bg-primary-600"
             >
               Check Grand
             </Link>
@@ -394,7 +394,7 @@ export default function Checker() {
               </tbody>
             )}
           </table>
-          {busy && <div className="p-4">Checking...</div>}
+          {busy && <div className="w-full p-4">Checking...</div>}
         </div>
       </div>
     </div>

@@ -247,8 +247,8 @@ export default function Viewer() {
             />
           </div>
         </div>*/}
-        <div className="mt-8 lg:mt-5">
-          <div className="inline-flex rounded-md shadow">
+        <div className="mt-6 lg:mt-5">
+          <div className="mb-3 inline-flex rounded-md shadow">
             <Link
               href="#"
               onClick={() => handleRead649()}
@@ -258,7 +258,7 @@ export default function Viewer() {
               View 649
             </Link>
           </div>
-          <div className="inline-flex rounded-md shadow">
+          <div className="mt-3 inline-flex rounded-md shadow">
             <Link
               href="#"
               onClick={() => handleReadBC49()}
@@ -268,7 +268,7 @@ export default function Viewer() {
               View BC49
             </Link>
           </div>
-          <div className="inline-flex rounded-md shadow">
+          <div className="mt-3 inline-flex rounded-md shadow">
             <Link
               href="#"
               onClick={() => handleReadMax()}
@@ -278,12 +278,12 @@ export default function Viewer() {
               View Max
             </Link>
           </div>
-          <div className="inline-flex rounded-md shadow">
+          <div className="mb-t inline-flex rounded-md shadow">
             <Link
               href="#"
               onClick={() => handleReadDailyGrand()}
               aria-label="Contact"
-              className="mr-2 inline-flex items-center justify-center rounded-md border border-transparent bg-primary-500 px-4 py-2 text-base font-medium text-white hover:bg-primary-600"
+              className="mr-2 inline-flex items-center justify-center rounded-md border border-transparent bg-primary-500 px-3.5 py-2 text-base font-medium text-white hover:bg-primary-600"
             >
               View Grand
             </Link>
@@ -389,7 +389,7 @@ export default function Viewer() {
               </tbody>
             )}
           </table>
-          {busy && <span className="w-full">Loading winning numbers...</span>}
+          {busy && <div className="w-full p-4">Loading winning numbers...</div>}
         </div>
       </div>
     </div>
