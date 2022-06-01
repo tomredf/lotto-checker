@@ -313,20 +313,26 @@ export default function Viewer() {
             </p>
           </div>
         </div>*/}
-        <div className="-mx-4 mt-4 max-h-[55vh] max-w-4xl overflow-y-scroll rounded-md shadow sm:-mx-6 md:mx-0">
+        <div className="-mx-4 mt-4 max-h-[55vh] max-w-4xl overflow-y-auto rounded-md shadow sm:-mx-6 md:mx-0">
+          <div className="sticky top-0 z-10 inline-flex w-full items-center rounded-t-md bg-gray-50 py-3 px-4 dark:bg-gray-600">
+            <img src={icon} height="30" alt="Game icon" />
+            <div className="ml-4 w-full items-center text-3xl">
+              Winning Numbers ({results.length})
+            </div>
+          </div>
           <table className="min-w-full divide-y divide-gray-300 dark:divide-gray-600">
-            <thead className="bg-gray-50 dark:bg-gray-600">
-              <tr>
+            {/*<thead className="bg-gray-50 dark:bg-gray-600">
+              <tr className="col-span-7">
                 <th
                   scope="col"
-                  className="sticky top-0 z-10 bg-gray-50 py-3 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:bg-gray-600 dark:text-gray-50 sm:pl-6"
+                  className="sticky top-0 z-10 col-span-7 bg-gray-50 py-3 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:bg-gray-600 dark:text-gray-50 sm:pl-6"
                 >
-                  <div className="inline-flex items-center align-bottom">
+                  <span className="inline-flex w-full items-center align-bottom">
                     <img src={icon} height="30" alt="Game icon" />
-                    <div className="ml-4 items-center text-3xl">
+                    <span className="ml-4 w-full items-center text-3xl">
                       Winning Numbers ({results.length})
-                    </div>
-                  </div>
+                    </span>
+                  </span>
                 </th>
                 <th
                   scope="col"
@@ -359,12 +365,12 @@ export default function Viewer() {
                   ></th>
                 )}
               </tr>
-            </thead>
+            </thead>*/}
             {!busy && results && results.length > 0 && (
               <tbody className="divide-y divide-gray-200 bg-white dark:divide-gray-600 dark:bg-gray-500">
-                {results.map((draw) => (
+                {results.map((draw, index) => (
                   <tr
-                    key={draw.drawDate}
+                    key={index}
                     className="divide-x divide-gray-200 bg-white dark:divide-gray-600 dark:bg-gray-500"
                   >
                     <td className="w-full max-w-0 py-2 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-gray-100 sm:w-auto sm:max-w-none sm:pl-6">
@@ -382,10 +388,8 @@ export default function Viewer() {
                 ))}
               </tbody>
             )}
-            {busy && (
-              <div className="w-full bg-white p-4 dark:bg-gray-500">Loading winning numbers...</div>
-            )}
           </table>
+          {busy && <span className="w-full">Loading winning numbers...</span>}
         </div>
       </div>
     </div>

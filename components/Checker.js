@@ -309,9 +309,13 @@ export default function Checker() {
             </p>
           </div>
         </div>*/}
-        <div className="-mx-4 mt-4 max-h-[540px] max-w-4xl overflow-y-scroll rounded-md shadow sm:-mx-6 md:mx-0">
+        <div className="-mx-4 mt-4 max-h-[540px] max-w-4xl overflow-y-auto rounded-md shadow sm:-mx-6 md:mx-0">
+          <div className="sticky top-0 z-10 inline-flex w-full items-center rounded-t-md bg-gray-50 py-3 px-4 dark:bg-gray-600">
+            <img src={icon} height="30" alt="Game icon" />
+            <div className="ml-4 w-full items-center text-3xl">Results ({results.length})</div>
+          </div>
           <table className="min-w-full divide-y divide-gray-300 dark:divide-gray-600">
-            <thead className="bg-gray-50 dark:bg-gray-600">
+            {/*<thead className="bg-gray-50 dark:bg-gray-600">
               <tr>
                 <th
                   scope="col"
@@ -353,7 +357,7 @@ export default function Checker() {
                   ></th>
                 )}
               </tr>
-            </thead>
+            </thead>*/}
             {!busy && results && results.length > 0 && (
               <tbody className="divide-y divide-gray-200 bg-white dark:divide-gray-600 dark:bg-gray-500">
                 {results.map((draw) => (
@@ -369,16 +373,16 @@ export default function Checker() {
                         {isSpecial(num) ? (
                           <td
                             key={index}
-                            className="px-3 py-2 text-center text-sm text-primary-500 dark:text-secondary-500 lg:table-cell"
+                            className="px-2 py-2 text-center text-sm text-primary-500 dark:text-secondary-500 lg:table-cell"
                           >
-                            <div className="min-w-6 min-h-6 border-b border-primary-500 dark:border-secondary-500">
+                            <div className="min-w-6 min-h-6 border-b-0 border-primary-500 font-medium dark:border-secondary-500">
                               {num}
                             </div>
                           </td>
                         ) : (
                           <td
                             key={index}
-                            className="px-3 py-2 text-center text-sm font-normal text-gray-500 dark:text-gray-200 lg:table-cell"
+                            className="px-2 py-2 text-center text-sm font-normal text-gray-500 dark:text-gray-200 lg:table-cell"
                           >
                             {num}
                           </td>
@@ -389,8 +393,8 @@ export default function Checker() {
                 ))}
               </tbody>
             )}
-            {busy && <div className="p-4">Checking...</div>}
           </table>
+          {busy && <div className="p-4">Checking...</div>}
         </div>
       </div>
     </div>
