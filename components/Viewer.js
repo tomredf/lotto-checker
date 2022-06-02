@@ -318,7 +318,7 @@ export default function Viewer() {
             </p>
           </div>
         </div>*/}
-        <div className="-mx-4 mt-4 max-h-[55vh] max-w-4xl overflow-y-auto rounded-md shadow sm:-mx-6 md:mx-0">
+        <div className="-mx-4 mt-4 max-h-[55vh] max-w-7xl overflow-y-auto rounded-md shadow sm:-mx-6 md:mx-0">
           <div className="sticky top-0 z-10 inline-flex w-full items-center rounded-t-md bg-gray-50 py-3 px-4 dark:bg-gray-600">
             <img src={icon} height="30" alt="Game icon" />
             <div className="ml-4 w-full items-center text-3xl">

@@ -124,7 +124,7 @@ export default function Contact() {
               <h3 className="pt-3 text-xl font-bold text-white">Contact information</h3>
               <p className="mt-6 max-w-3xl text-base text-primary-50">
                 If you are interested in discussing a custom web app for your business or have any
-                questions, please contact using the contact info below or send us a message using
+                questions, please contact us using the contact info below or send us a message using
                 the form.
               </p>
               <dl className="mt-8 space-y-6">
