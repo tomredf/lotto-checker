@@ -20,12 +20,11 @@ export default function Footer() {
           <div>{`© ${new Date().getFullYear()}`}</div>
           <div>{` • `}</div>
           <div>{siteMetadata.author}</div>
+          <div>{` • `}</div>
+          <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
+            <Link href="/contactus">Contact Us</Link>
+          </div>
         </div>
-        {/*        <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
-          <Link href="https://github.com/timlrx/tailwind-nextjs-starter-blog">
-            Tailwind Nextjs Theme
-          </Link>
-        </div>*/}
       </div>
     </footer>
   )
