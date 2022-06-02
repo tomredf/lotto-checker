@@ -34,10 +34,10 @@ input:-webkit-autofill:focus {
 /* Track */
 ::-webkit-scrollbar-track {
   border-radius: 100vh;
-  background: #8fa271;
+  background: #e7e3cd;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(rgb(236, 72, 153), rgb(163, 230, 53), rgb(236, 72, 153));
+  background: linear-gradient(rgb(245, 158, 12), rgb(245, 158, 12), rgb(245, 158, 12));
 }

@@ -103,7 +103,7 @@ export default function Viewer() {
       draw.bonusNumber = bonus
       newDraws[i] = draw
     }
-    console.log(newDraws)
+    //console.log(newDraws)
     return newDraws
   }
 
@@ -122,7 +122,7 @@ export default function Viewer() {
     let n = 0
 
     const draws = pastDraws.reverse()
-    console.log(draws)
+    //console.log(draws)
     const a1 = draws[0].numbersDrawn
     const a2 = draws[1].numbersDrawn
     const a3 = draws[2].numbersDrawn

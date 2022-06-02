@@ -6,7 +6,7 @@ import Image from './Image'
 import Link from './Link'
 import CTA from '@/components/CTA'
 
-export default function Checker() {
+export default function Hero2() {
   return (
     <div className="relative overflow-hidden">
       <main>
@@ -17,14 +17,16 @@ export default function Checker() {
                 <div className="lg:py-8">
                   <h1 className="mt-0 text-3xl font-extrabold tracking-tight text-primary-500 sm:mt-0 sm:text-4xl lg:mt-0 xl:text-6xl">
                     <span className="block">Lotto Checker</span>
-                    <span className="block text-2xl text-secondary-500 md:text-3xl xl:text-4xl">
-                      649, BC49, & Max
+                    <span className="block text-xl text-secondary-500 md:text-2xl xl:text-3xl">
+                      649, BC49, Max, & Daily Grand
                     </span>
                   </h1>
                   <p className="mt-3 text-sm text-gray-600 dark:text-gray-300 sm:mt-5 md:text-base lg:text-lg">
                     This is the description
                   </p>
-                  {/*<div className="mt-10 sm:mt-5">/!*<CTA />*!/</div>*/}
+                  <div className="mt-10 sm:mt-5">
+                    <CTA />
+                  </div>
                 </div>
               </div>
               <div className="mt-5 lg:relative lg:m-4">
@@ -33,8 +35,8 @@ export default function Checker() {
                     alt={'Hero image'}
                     src={'/static/images/hero3.svg'}
                     className="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                    width={400}
-                    height={400}
+                    width={800}
+                    height={600}
                     layout="intrinsic"
                   />
                 </div>

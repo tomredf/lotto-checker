@@ -5,9 +5,9 @@ import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import Hero2 from '@/components/Hero2'
-//import CTA from '@/components/CTA'
+import CTA from '@/components/CTA'
 import Checker from '@/components/Checker'
-//import Reviews from '@/components/Reviews'
+import Reviews from '@/components/Reviews'
 import Incentives from '@/components/Incentives'
 import NewsletterForm from '@/components/NewsletterForm'
 
@@ -32,8 +32,8 @@ export default function Home({ posts }) {
             {siteMetadata.description}
           </p>
         </div>*/}
-        <Hero2 />
-
+        {/*<Hero2 />*/}
+        <Checker />
         {/*<Reviews />*/}
 
         {/*<ul className="divide-y divide-gray-200 px-2 dark:divide-gray-700 lg:px-0">
