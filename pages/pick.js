@@ -7,6 +7,7 @@ import formatDate from '@/lib/utils/formatDate'
 //import Hero2 from '@/components/Hero2'
 //import CTA from '@/components/CTA'
 import Picker from '@/components/Picker'
+import PickerCustom from '@/components/PickerCustom'
 //import Reviews from '@/components/Reviews'
 //import Incentives from '@/components/Incentives'
 //import NewsletterForm from '@/components/NewsletterForm'
@@ -23,7 +24,7 @@ export default function Pick({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+      <div className="space-y-14 divide-y divide-gray-200 dark:divide-gray-700">
         {/*        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Latest
@@ -34,6 +35,7 @@ export default function Pick({ posts }) {
         </div>*/}
         {/*<Hero2 />*/}
         <Picker />
+        <PickerCustom />
         {/*<Reviews />*/}
 
         {/*<ul className="divide-y divide-gray-200 px-2 dark:divide-gray-700 lg:px-0">

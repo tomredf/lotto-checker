@@ -1,14 +1,17 @@
 import { useState } from 'react'
 import Link from './Link'
 import siteMetadata from '@/data/siteMetadata'
-import { useCSVReader } from 'react-papaparse'
-import { usePapaParse } from 'react-papaparse'
+//import { useCSVReader } from 'react-papaparse'
+//import { usePapaParse } from 'react-papaparse'
 import { continueFromInitialStream } from 'next/dist/server/node-web-streams-helper'
 
-export default function Picker() {
-  const { readRemoteFile } = usePapaParse()
+export default function PickerCustom() {
+  //const { readRemoteFile } = usePapaParse()
   const [plays, setPlays] = useState(3)
-  //const [numsToCheckArray, setNumsToCheckArray] = useState([])
+  const [numsToChooseFrom, setNumsToChooseFrom] = useState(
+    '1 2 3 4 54 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49'
+  )
+  const [numsToChooseFromArray, setNumsToChooseFromArray] = useState([])
   const [results, setResults] = useState([])
   const [name, setName] = useState('')
   const [icon, setIcon] = useState('/static/images/default.png')
@@ -16,127 +19,16 @@ export default function Picker() {
 
   const getNumsArray = (numString) => {
     const res = numString.split(' ').map(Number)
-    //setNumsToCheckArray(res)
+    setNumsToChooseFromArray(res)
+    //console.log('Nums to choose from', res)
     return res
   }
 
-  const build649Draws = (draws) => {
-    let newDraws = []
-    let arrayLength = draws.length - 1
-    let dt = ''
-    let bonus = 0
-    let nums = []
-    let i = 0
-    for (i = 0; i < arrayLength; i++) {
-      nums = []
-      dt = draws[i]['DRAW DATE']
-      bonus = parseInt(draws[i]['BONUS NUMBER'])
-      nums[0] = parseInt(draws[i]['NUMBER DRAWN 1'])
-      nums[1] = parseInt(draws[i]['NUMBER DRAWN 2'])
-      nums[2] = parseInt(draws[i]['NUMBER DRAWN 3'])
-      nums[3] = parseInt(draws[i]['NUMBER DRAWN 4'])
-      nums[4] = parseInt(draws[i]['NUMBER DRAWN 5'])
-      nums[5] = parseInt(draws[i]['NUMBER DRAWN 6'])
-      let draw = {}
-      draw.drawDate = dt
-      draw.numbersDrawn = nums
-      draw.bonusNumber = bonus
-      newDraws[i] = draw
-    }
-
-    return newDraws
-  }
-
-  const buildMaxDraws = (draws) => {
-    // Because the Max has multiple winning numbers, we only want the main ones that includes a bonus number.
-    // This will be the jackpot numbers and not the Max Millions numbers
-    const filteredDraws = draws.filter(function (draw) {
-      return draw['BONUS NUMBER'] > 0
-    })
-    let newDraws = []
-    let arrayLength = filteredDraws.length - 1
-    let dt = ''
-    let bonus = 0
-    let nums = []
-    let i = 0
-
-    for (i = 0; i < arrayLength; i++) {
-      nums = []
-      dt = filteredDraws[i]['DRAW DATE']
-      bonus = parseInt(filteredDraws[i]['BONUS NUMBER'])
-      nums[0] = parseInt(filteredDraws[i]['NUMBER DRAWN 1'])
-      nums[1] = parseInt(filteredDraws[i]['NUMBER DRAWN 2'])
-      nums[2] = parseInt(filteredDraws[i]['NUMBER DRAWN 3'])
-      nums[3] = parseInt(filteredDraws[i]['NUMBER DRAWN 4'])
-      nums[4] = parseInt(filteredDraws[i]['NUMBER DRAWN 5'])
-      nums[5] = parseInt(filteredDraws[i]['NUMBER DRAWN 6'])
-      nums[6] = parseInt(filteredDraws[i]['NUMBER DRAWN 7'])
-      let draw = {}
-      draw.drawDate = dt
-      draw.numbersDrawn = nums
-      draw.bonusNumber = bonus
-      newDraws[i] = draw
-    }
-
-    return newDraws
-  }
-
-  const buildGrandDraws = (draws) => {
-    let newDraws = []
-    let arrayLength = draws.length - 1
-    let dt = ''
-    let bonus = 0
-    let nums = []
-    let i = 0
-    for (i = 0; i < arrayLength; i++) {
-      nums = []
-      dt = draws[i]['DRAW DATE']
-      nums[0] = parseInt(draws[i]['NUMBER DRAWN 1'])
-      nums[1] = parseInt(draws[i]['NUMBER DRAWN 2'])
-      nums[2] = parseInt(draws[i]['NUMBER DRAWN 3'])
-      nums[3] = parseInt(draws[i]['NUMBER DRAWN 4'])
-      nums[4] = parseInt(draws[i]['NUMBER DRAWN 5'])
-      nums[5] = parseInt(draws[i]['GRAND NUMBER'])
-      let draw = {}
-      draw.drawDate = dt
-      draw.numbersDrawn = nums
-      draw.bonusNumber = bonus
-      newDraws[i] = draw
-    }
-    //console.log(newDraws)
-    return newDraws
-  }
-
-  const isSubset = (arr1, arr2, m, n) => {
-    let i = 0
-    let j = 0
-    for (i = 0; i < n; i++) {
-      for (j = 0; j < m; j++) if (arr2[i] === arr1[j]) break
-      if (j === m) return false
-    }
-    return true
-  }
-
-  const pickNums = (numCount, numPlays, pastDraws, game) => {
+  const pickNums = (numCount, numPlays, game) => {
     let res = []
     let n = 0
 
-    const draws = pastDraws.reverse()
-    //console.log(draws)
-    const a1 = draws[0].numbersDrawn
-    const a2 = draws[1].numbersDrawn
-    const a3 = draws[2].numbersDrawn
-    const a4 = draws[3].numbersDrawn
-    const a5 = draws[4].numbersDrawn
-    const a6 = draws[5].numbersDrawn
-    const a7 = draws[6].numbersDrawn
-    const a8 = draws[7].numbersDrawn
-    const a9 = draws[8].numbersDrawn
-    const a10 = draws[9].numbersDrawn
-
-    const numPool = [].concat.apply([], [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10])
-    //console.log('Num pool', numPool)
-    const numPoolUnique = [...new Set(numPool)]
+    const numPoolUnique = [...new Set(getNumsArray(numsToChooseFrom))]
 
     let randomPlay = []
 
@@ -197,18 +89,9 @@ export default function Picker() {
     setBusy(true)
     setName('649')
     setIcon('/static/images/649.png')
-    readRemoteFile('/static/649.csv', {
-      header: true,
-      download: true,
-      dynamicTyping: true,
-      complete: (results) => {
-        //const nums = getNumsArray(numsToCheck)
-        const draws = build649Draws(Array.from(results.data))
-        //setResults(draws.reverse())
-        pickNums(6, plays, draws, '649')
-        setBusy(false)
-      },
-    })
+    getNumsArray(numsToChooseFrom)
+    pickNums(6, plays, '649')
+    setBusy(false)
   }
 
   const handleReadBC49 = () => {
@@ -216,17 +99,9 @@ export default function Picker() {
     setBusy(true)
     setName('BC49')
     setIcon('/static/images/bc49.png')
-    readRemoteFile('/static/BC49.csv', {
-      header: true,
-      download: true,
-      dynamicTyping: true,
-      complete: (results) => {
-        //const nums = getNumsArray(numsToCheck)
-        const draws = build649Draws(Array.from(results.data))
-        pickNums(6, plays, draws, 'bc49')
-        setBusy(false)
-      },
-    })
+    getNumsArray(numsToChooseFrom)
+    pickNums(6, plays, 'bc49')
+    setBusy(false)
   }
 
   const handleReadMax = () => {
@@ -234,17 +109,9 @@ export default function Picker() {
     setBusy(true)
     setName('Max')
     setIcon('/static/images/max.png')
-    readRemoteFile('/static/MAX.csv', {
-      header: true,
-      download: true,
-      dynamicTyping: true,
-      complete: (results) => {
-        //const nums = getNumsArray(numsToCheck)
-        const draws = buildMaxDraws(Array.from(results.data))
-        pickNums(7, plays, draws, 'max')
-        setBusy(false)
-      },
-    })
+    getNumsArray(numsToChooseFrom)
+    pickNums(7, plays, 'max')
+    setBusy(false)
   }
 
   const handleReadDailyGrand = () => {
@@ -252,17 +119,9 @@ export default function Picker() {
     setBusy(true)
     setName('Daily Grand')
     setIcon('/static/images/dailygrand.png')
-    readRemoteFile('/static/DailyGrand.csv', {
-      header: true,
-      download: true,
-      dynamicTyping: true,
-      complete: (results) => {
-        //const nums = getNumsArray(numsToCheck)
-        const draws = buildGrandDraws(Array.from(results.data))
-        pickNums(6, plays, draws, 'grand')
-        setBusy(false)
-      },
-    })
+    getNumsArray(numsToChooseFrom)
+    pickNums(5, plays, 'grand')
+    setBusy(false)
   }
 
   const reset = () => {
@@ -279,17 +138,17 @@ export default function Picker() {
         <h2 className="text-xl font-extrabold tracking-tight text-primary-500 md:text-xl lg:text-2xl">
           <span className="block">Generate numbers</span>
           <span className="block text-lg text-secondary-500 md:text-xl lg:text-2xl">
-            from the last 10 draws
+            from list of numbers
           </span>
         </h2>
         <div>
-          <label htmlFor="nums-to-check" className="text-warm-gray-900 block text-sm font-medium">
+          <label htmlFor="plays" className="text-warm-gray-900 block text-sm font-medium">
             Number of plays
           </label>
           <div className="mt-1">
             <input
               type="number"
-              name="nums-to-check"
+              name="plays"
               id="nums-to-check"
               value={plays}
               autoComplete=""
@@ -339,6 +198,22 @@ export default function Picker() {
               Pick Grand
             </Link>
           </div>
+        </div>
+      </div>
+      <div>
+        <label htmlFor="nums-to-check" className="text-warm-gray-900 block text-sm font-medium">
+          Number to choose from
+        </label>
+        <div className="mt-1">
+          <input
+            type="text"
+            name="nums-to-check"
+            value={numsToChooseFrom}
+            id="nums-to-check"
+            autoComplete=""
+            onChange={(e) => setNumsToChooseFrom(e.target.value)}
+            className="mt-1 block w-full rounded-md border-gray-300 bg-white text-base text-gray-700 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
+          />
         </div>
       </div>
       {/*      {results && results.length > 0 && (
