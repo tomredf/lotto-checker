@@ -30,12 +30,12 @@ export default function Hero2() {
                   </div>
                 </div>
               </div>
-              <div className="mt-5 lg:relative lg:m-4">
-                <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
+              <div className="mt-8 lg:relative">
+                <div className="max-w-lg px-4 text-center sm:max-w-3xl sm:px-6 md:text-right lg:max-w-none lg:px-0">
                   <Image
                     alt={'Hero image'}
                     src={'/static/images/hero3.svg'}
-                    className="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
+                    // className="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
                     width={800}
                     height={600}
                     layout="intrinsic"
