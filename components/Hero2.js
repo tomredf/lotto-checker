@@ -13,7 +13,7 @@ export default function Hero2() {
         <div className="pt-5 lg:overflow-hidden lg:pt-10 lg:pt-0 lg:pb-14">
           <div className="mx-auto max-w-7xl lg:px-0">
             <div className="grid md:grid-cols-2 lg:gap-8">
-              <div className="mx-auto max-w-7xl px-4 text-left sm:max-w-2xl sm:px-6 lg:flex lg:items-center lg:px-0">
+              <div className="mx-auto max-w-7xl px-4 text-center sm:max-w-2xl sm:px-6 md:text-left lg:flex  lg:px-0">
                 <div className="lg:py-8">
                   <h1 className="mt-0 text-3xl font-extrabold tracking-tight text-primary-500 sm:mt-0 sm:text-4xl lg:mt-0 xl:text-6xl">
                     <span className="block">Lotto Checker</span>
@@ -22,7 +22,8 @@ export default function Hero2() {
                     </span>
                   </h1>
                   <p className="mt-3 text-sm text-gray-600 dark:text-gray-300 sm:mt-5 md:text-base lg:text-lg">
-                    This is the description
+                    This site is only for fun and only applies to the lotteries available in British
+                    Columbia Canada.
                   </p>
                   <div className="mt-10 sm:mt-5">
                     <CTA />
