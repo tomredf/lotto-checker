@@ -1,15 +1,15 @@
 import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
-import Tag from '@/components/Tag'
+//import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import Hero2 from '@/components/Hero2'
 import CTA from '@/components/CTA'
 import Checker from '@/components/Checker'
-import Reviews from '@/components/Reviews'
-import Incentives from '@/components/Incentives'
-import NewsletterForm from '@/components/NewsletterForm'
+//import Reviews from '@/components/Reviews'
+//import Incentives from '@/components/Incentives'
+//import NewsletterForm from '@/components/NewsletterForm'
 
 const MAX_DISPLAY = 2
 
@@ -19,11 +19,11 @@ export async function getStaticProps() {
   return { props: { posts } }
 }
 
-export default function Home({ posts }) {
+export default function Check({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+      <div className="space-y-14 divide-y divide-gray-200 dark:divide-gray-700">
         {/*        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Latest

@@ -15,7 +15,7 @@ export default function Checker() {
   const [busy, setBusy] = useState(false)
 
   const getNumsArray = (numString) => {
-    const res = numString.split(' ').map(Number)
+    const res = numString.trim().split(' ').map(Number)
     setNumsToCheckArray(res)
     return res
   }
@@ -223,7 +223,7 @@ export default function Checker() {
     <div className="">
       <div className="mx-auto max-w-7xl py-5 px-0 lg:flex lg:items-center lg:justify-between lg:px-0 lg:pt-10">
         <h2 className="text-xl font-extrabold tracking-tight text-primary-500 md:text-xl lg:text-2xl">
-          <span className="block">Let's check some numbers</span>
+          <span className="block">Check some numbers</span>
           <span className="block text-lg text-secondary-500 md:text-xl lg:text-2xl">
             and see how they did in past draws
           </span>
@@ -232,7 +232,7 @@ export default function Checker() {
           <label htmlFor="nums-to-check" className="text-warm-gray-900 block text-sm font-medium">
             Numbers to check
           </label>
-          <div className="mt-3">
+          <div className="mt-1">
             <input
               type="text"
               name="nums-to-check"
@@ -244,42 +244,42 @@ export default function Checker() {
           </div>
         </div>
         <div className="mt-6 lg:mt-5">
-          <div className="mt-3 inline-flex rounded-md shadow">
+          <div className="mb-3 inline-flex rounded-md shadow">
             <Link
               href="#"
               onClick={() => handleRead649()}
-              aria-label="Contact"
+              aria-label="Check 649"
               className="mr-2 inline-flex items-center justify-center rounded-md border border-transparent bg-primary-500 px-4 py-2 text-base font-medium text-white hover:bg-primary-600"
             >
               Check 649
             </Link>
           </div>
-          <div className="mt-3 inline-flex rounded-md shadow">
+          <div className="mb-3 inline-flex rounded-md shadow">
             <Link
               href="#"
               onClick={() => handleReadBC49()}
-              aria-label="Contact"
+              aria-label="Check BC49"
               className="mr-2 inline-flex items-center justify-center rounded-md border border-transparent bg-primary-500 px-4 py-2 text-base font-medium text-white hover:bg-primary-600"
             >
               Check BC49
             </Link>
           </div>
-          <div className="mt-3 inline-flex rounded-md shadow">
+          <div className="mb-3 inline-flex rounded-md shadow">
             <Link
               href="#"
               onClick={() => handleReadMax()}
-              aria-label="Contact"
+              aria-label="Check MAX"
               className="mr-2 inline-flex items-center justify-center rounded-md border border-transparent bg-primary-500 px-4 py-2 text-base font-medium text-white hover:bg-primary-600"
             >
               Check Max
             </Link>
           </div>
-          <div className="mt-3 inline-flex rounded-md shadow">
+          <div className="mb-3 inline-flex rounded-md shadow">
             <Link
               href="#"
               onClick={() => handleReadDailyGrand()}
-              aria-label="Contact"
-              className="mr-2 inline-flex items-center justify-center rounded-md border border-transparent bg-primary-500 px-3.5 py-2 text-base font-medium text-white hover:bg-primary-600"
+              aria-label="Check Daily Grand"
+              className="mr-2 inline-flex items-center justify-center rounded-md border border-transparent bg-primary-500 px-4 py-2 text-base font-medium text-white hover:bg-primary-600"
             >
               Check Grand
             </Link>

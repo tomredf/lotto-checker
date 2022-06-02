@@ -9,7 +9,7 @@ export default function PickerCustom() {
   //const { readRemoteFile } = usePapaParse()
   const [plays, setPlays] = useState(3)
   const [numsToChooseFrom, setNumsToChooseFrom] = useState(
-    '1 2 3 4 54 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49'
+    '1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49'
   )
   const [numsToChooseFromArray, setNumsToChooseFromArray] = useState([])
   const [results, setResults] = useState([])
@@ -18,7 +18,7 @@ export default function PickerCustom() {
   const [busy, setBusy] = useState(false)
 
   const getNumsArray = (numString) => {
-    const res = numString.split(' ').map(Number)
+    const res = numString.trim().split(' ').map(Number)
     setNumsToChooseFromArray(res)
     //console.log('Nums to choose from', res)
     return res
@@ -149,7 +149,7 @@ export default function PickerCustom() {
             <input
               type="number"
               name="plays"
-              id="nums-to-check"
+              id="plays"
               value={plays}
               autoComplete=""
               onChange={(e) => setPlays(parseInt(e.target.value))}
@@ -162,7 +162,7 @@ export default function PickerCustom() {
             <Link
               href="#"
               onClick={() => handleRead649()}
-              aria-label="Contact"
+              aria-label="649"
               className="mr-2 inline-flex items-center justify-center rounded-md border border-transparent bg-primary-500 px-4 py-2 text-base font-medium text-white hover:bg-primary-600"
             >
               Pick 649
@@ -172,7 +172,7 @@ export default function PickerCustom() {
             <Link
               href="#"
               onClick={() => handleReadBC49()}
-              aria-label="Contact"
+              aria-label="BC49"
               className="mr-2 inline-flex items-center justify-center rounded-md border border-transparent bg-primary-500 px-4 py-2 text-base font-medium text-white hover:bg-primary-600"
             >
               Pick BC49
@@ -182,17 +182,17 @@ export default function PickerCustom() {
             <Link
               href="#"
               onClick={() => handleReadMax()}
-              aria-label="Contact"
+              aria-label="Max"
               className="mr-2 inline-flex items-center justify-center rounded-md border border-transparent bg-primary-500 px-4 py-2 text-base font-medium text-white hover:bg-primary-600"
             >
               Pick Max
             </Link>
           </div>
-          <div className="mb-t inline-flex rounded-md shadow">
+          <div className="mb-3 inline-flex rounded-md shadow">
             <Link
               href="#"
               onClick={() => handleReadDailyGrand()}
-              aria-label="Contact"
+              aria-label="Daily Grand"
               className="mr-2 inline-flex items-center justify-center rounded-md border border-transparent bg-primary-500 px-3.5 py-2 text-base font-medium text-white hover:bg-primary-600"
             >
               Pick Grand
