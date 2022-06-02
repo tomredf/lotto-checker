@@ -319,9 +319,9 @@ export default function Viewer() {
           </div>
         </div>*/}
         <div className="-mx-4 mt-4 max-h-[55vh] max-w-7xl overflow-y-auto rounded-md shadow sm:-mx-6 md:mx-0">
-          <div className="sticky top-0 z-10 inline-flex w-full items-center rounded-t-md bg-gray-50 py-3 px-4 dark:bg-gray-600">
+          <div className="md-h-20 sticky top-0 z-10 inline-flex h-16 w-full items-center rounded-t-md bg-gray-50 py-3 px-2 dark:bg-gray-600 md:h-20">
             <img src={icon} height="30" alt="Game icon" />
-            <div className="ml-4 w-full items-center text-3xl">
+            <div className="ml-4 w-full items-center text-xl md:text-3xl">
               Winning Numbers ({results.length})
             </div>
           </div>

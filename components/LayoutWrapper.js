@@ -40,8 +40,8 @@ const LayoutWrapper = ({ children }) => {
               </div>*/}
             </Link>
           </div>
-          <div className="flex items-center text-base leading-5">
-            <div className="hidden sm:block">
+          <div className="flex items-center text-sm leading-5">
+            <div className="hidden  lg:block">
               {headerNavLinks.map((link) => (
                 <Link
                   key={link.title}
