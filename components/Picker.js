@@ -369,7 +369,7 @@ export default function Picker() {
           </div>
         </div>*/}
         <div className="-mx-4 mt-4 max-h-[55vh] max-w-7xl overflow-y-auto rounded-md shadow sm:-mx-6 md:mx-0">
-          <div className="sticky top-0 z-10 inline-flex h-16 w-full items-center rounded-t-md bg-gray-50 py-3 px-2 dark:bg-gray-600 md:h-20">
+          <div className="sticky top-0 z-10 inline-flex h-16 w-full items-center rounded-t-md bg-gray-50 py-3 px-2 dark:bg-gray-700 md:h-20">
             <img src={icon} height="30" alt="Game icon" />
             <div className="ml-4 w-full items-center text-xl md:text-3xl">
               Lucky Numbers ({results.length})
@@ -422,11 +422,11 @@ export default function Picker() {
               </tr>
             </thead>*/}
             {!busy && results && results.length > 0 && (
-              <tbody className="divide-y divide-gray-200 bg-white dark:divide-gray-600 dark:bg-gray-500">
+              <tbody className="divide-y divide-gray-200 bg-white dark:divide-gray-600 dark:bg-gray-800">
                 {results.map((draw, index) => (
                   <tr
                     key={index}
-                    className="divide-x divide-gray-200 bg-white dark:divide-gray-600 dark:bg-gray-500"
+                    className="divide-x divide-gray-200 bg-white dark:divide-gray-600 dark:bg-gray-800"
                   >
                     <td className="w-full max-w-0 py-2 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-gray-100 sm:w-auto sm:max-w-none sm:pl-6">
                       Play {index + 1}

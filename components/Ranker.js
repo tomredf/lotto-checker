@@ -453,11 +453,13 @@ export default function Ranker() {
           </div>
         </div>*/}
         <div className="-mx-4 mt-4 max-h-[55vh] max-w-7xl overflow-y-auto rounded-md shadow sm:-mx-6 md:mx-0">
-          <div className="sticky top-0 z-10 inline-flex h-16 w-full items-center rounded-t-md bg-gray-50 py-3 px-2 dark:bg-gray-600 md:h-20">
+          <div className="sticky top-0 z-10 inline-flex h-16 w-full items-center rounded-t-md bg-gray-50 py-3 px-2 dark:bg-gray-700 md:h-20">
             <img src={icon} height="30" alt="Game icon" />
             <div className="ml-4 w-full items-center text-xl md:text-3xl">{resultsLabel}</div>
           </div>
-          <div>{!busy && <Bar data={data} width={400} height={100} options={options} />}</div>
+          <div className="bg-white py-3 px-2 dark:bg-gray-800">
+            {!busy && <Bar data={data} width={400} height={100} options={options} />}
+          </div>
 
           {/*{busy && <div className="w-full p-4">Ranking numbers...</div>}*/}
         </div>
