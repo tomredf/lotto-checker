@@ -53,6 +53,10 @@ export default function Ranker() {
   const [icon, setIcon] = useState('/static/images/default.png')
   const [busy, setBusy] = useState(false)
   const [resultsLabel, setResultsLabel] = useState('Results')
+  const [gameColours] = useState(['#007EC2', '#EE3124', '#619635', '#F59E0C'])
+  //const [colourBC49] = useState('#EE3124')
+  //const [colourMAX] = useState('#619635')
+  //const [colourGrand] = useState('#F59E0C')
 
   ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
@@ -69,9 +73,9 @@ export default function Ranker() {
     return 'rgba(' + o(r() * s) + ',' + o(r() * s) + ',' + o(r() * s) + ',' + r().toFixed(1) + ')'
   }
 
-  const getBarColours = () => {
+  const getBarColours = (game) => {
     const colours = []
-    const colour = '#F59E0C' //getColour()
+    const colour = gameColours[game] //'#F59E0C' //getColour()
     let i = 0
     const nums = getNumsArray(numsToRank)
     const arrayLength = nums.length
@@ -83,14 +87,14 @@ export default function Ranker() {
     //console.log(colours)
   }
 
-  const getData = (rankings) => {
+  const getData = (rankings, game) => {
     const d = {
       labels: numsToRank.split(' '),
       datasets: [
         {
           label: 'Times drawn in the last ' + plays + ' draws',
           data: rankings,
-          backgroundColor: getBarColours(),
+          backgroundColor: getBarColours(game),
           borderColor: barColours,
           borderWidth: 0,
         },
@@ -201,8 +205,8 @@ export default function Ranker() {
       n++
       nums[n] = parseInt(recentDraws[i]['NUMBER DRAWN 5'])
       n++
-      nums[n] = parseInt(recentDraws[i]['GRAND DRAWN'])
-      n++
+      //nums[n] = parseInt(recentDraws[i]['GRAND DRAWN'])
+      //n++
     }
     // Now count how many times each number was drawn
     let j = 0
@@ -228,7 +232,7 @@ export default function Ranker() {
       complete: (results) => {
         const rankings = rank649(Array.from(results.data), plays)
         getBarColours()
-        getData(rankings)
+        getData(rankings, 0)
         setBusy(false)
       },
     })
@@ -246,7 +250,7 @@ export default function Ranker() {
       complete: (results) => {
         const rankings = rank649(Array.from(results.data), plays)
         getBarColours()
-        getData(rankings)
+        getData(rankings, 1)
         setBusy(false)
       },
     })
@@ -264,7 +268,7 @@ export default function Ranker() {
       complete: (results) => {
         const rankings = rankMax(Array.from(results.data), plays)
         getBarColours()
-        getData(rankings)
+        getData(rankings, 2)
         setBusy(false)
       },
     })
@@ -282,7 +286,7 @@ export default function Ranker() {
       complete: (results) => {
         const rankings = rankGrand(Array.from(results.data), plays)
         getBarColours()
-        getData(rankings)
+        getData(rankings, 3)
         setBusy(false)
       },
     })
