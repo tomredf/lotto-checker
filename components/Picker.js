@@ -157,9 +157,9 @@ export default function Picker() {
       let x = randomPlay.sort(function (a, b) {
         return a - b
       })
-      /*      if (game === 'grand') {
+      if (game === 'grand') {
         x.push(Math.floor(Math.random() * 7))
-      }*/
+      }
       //console.log('Random Play', randomPlay)
       return x
     }
