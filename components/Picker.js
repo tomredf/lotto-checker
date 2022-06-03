@@ -82,8 +82,12 @@ export default function Picker() {
   }
 
   const buildGrandDraws = (draws) => {
+    // Because the Daily Grand can have multiple winning numbers, we only want the main ones that includes a bonus number.
+    const filteredDraws = draws.filter(function (draw) {
+      return draw['GRAND NUMBER'] > 0
+    })
     let newDraws = []
-    let arrayLength = draws.length - 1
+    let arrayLength = filteredDraws.length - 1
     let dt = ''
     let bonus = 0
     let nums = []
@@ -91,12 +95,12 @@ export default function Picker() {
     for (i = 0; i < arrayLength; i++) {
       nums = []
       dt = draws[i]['DRAW DATE']
-      nums[0] = parseInt(draws[i]['NUMBER DRAWN 1'])
-      nums[1] = parseInt(draws[i]['NUMBER DRAWN 2'])
-      nums[2] = parseInt(draws[i]['NUMBER DRAWN 3'])
-      nums[3] = parseInt(draws[i]['NUMBER DRAWN 4'])
-      nums[4] = parseInt(draws[i]['NUMBER DRAWN 5'])
-      nums[5] = parseInt(draws[i]['GRAND NUMBER'])
+      nums[0] = parseInt(filteredDraws[i]['NUMBER DRAWN 1'])
+      nums[1] = parseInt(filteredDraws[i]['NUMBER DRAWN 2'])
+      nums[2] = parseInt(filteredDraws[i]['NUMBER DRAWN 3'])
+      nums[3] = parseInt(filteredDraws[i]['NUMBER DRAWN 4'])
+      nums[4] = parseInt(filteredDraws[i]['NUMBER DRAWN 5'])
+      nums[5] = parseInt(filteredDraws[i]['GRAND NUMBER'])
       let draw = {}
       draw.drawDate = dt
       draw.numbersDrawn = nums
@@ -153,9 +157,9 @@ export default function Picker() {
       let x = randomPlay.sort(function (a, b) {
         return a - b
       })
-      if (game === 'grand') {
+      /*      if (game === 'grand') {
         x.push(Math.floor(Math.random() * 7))
-      }
+      }*/
       //console.log('Random Play', randomPlay)
       return x
     }

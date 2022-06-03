@@ -184,7 +184,11 @@ export default function Ranker() {
   }
 
   const rankGrand = (draws, count) => {
-    const recentDraws = draws.reverse()
+    // Because the Daily Grand can have multiple winning numbers, we only want the main ones that includes a bonus number.
+    const filteredDraws = draws.filter(function (draw) {
+      return draw['GRAND NUMBER'] > 0
+    })
+    const recentDraws = filteredDraws.reverse()
     let arrayLength = recentDraws.length
     if (count > arrayLength) {
       count = arrayLength
@@ -205,7 +209,7 @@ export default function Ranker() {
       n++
       nums[n] = parseInt(recentDraws[i]['NUMBER DRAWN 5'])
       n++
-      //nums[n] = parseInt(recentDraws[i]['GRAND DRAWN'])
+      //nums[n] = parseInt(recentDraws[i]['GRAND NUMBER'])
       //n++
     }
     // Now count how many times each number was drawn

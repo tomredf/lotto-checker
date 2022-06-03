@@ -49,7 +49,7 @@ export default function Viewer() {
 
   const buildMaxDraws = (draws) => {
     let newDraws = []
-    let arrayLength = draws.length - 1
+    let arrayLength = draws.length
     let dt = ''
     let bonus = 0
     let nums = []
@@ -80,8 +80,11 @@ export default function Viewer() {
   }
 
   const buildGrandDraws = (draws) => {
+    const filteredDraws = draws.filter(function (draw) {
+      return draw['GRAND NUMBER'] > 0
+    })
     let newDraws = []
-    let arrayLength = draws.length - 1
+    let arrayLength = filteredDraws.length
     let dt = ''
     let bonus = 0
     let nums = []
@@ -89,13 +92,13 @@ export default function Viewer() {
     for (i = 0; i < arrayLength; i++) {
       nums = []
 
-      dt = draws[i]['DRAW DATE']
-      nums[0] = parseInt(draws[i]['NUMBER DRAWN 1'])
-      nums[1] = parseInt(draws[i]['NUMBER DRAWN 2'])
-      nums[2] = parseInt(draws[i]['NUMBER DRAWN 3'])
-      nums[3] = parseInt(draws[i]['NUMBER DRAWN 4'])
-      nums[4] = parseInt(draws[i]['NUMBER DRAWN 5'])
-      nums[5] = parseInt(draws[i]['GRAND NUMBER'])
+      dt = filteredDraws[i]['DRAW DATE']
+      nums[0] = parseInt(filteredDraws[i]['NUMBER DRAWN 1'])
+      nums[1] = parseInt(filteredDraws[i]['NUMBER DRAWN 2'])
+      nums[2] = parseInt(filteredDraws[i]['NUMBER DRAWN 3'])
+      nums[3] = parseInt(filteredDraws[i]['NUMBER DRAWN 4'])
+      nums[4] = parseInt(filteredDraws[i]['NUMBER DRAWN 5'])
+      nums[5] = parseInt(filteredDraws[i]['GRAND NUMBER'])
       let draw = {}
       draw.drawDate = dt
       draw.numbersDrawn = nums
