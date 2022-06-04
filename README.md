@@ -1,4 +1,4 @@
-![banner](/public/static/images/twitter-card.png)
+![banner](/public/static/images/lotto-twitter-card.png)
 
 # Lotto Checker App
 
