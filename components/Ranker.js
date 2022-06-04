@@ -41,9 +41,6 @@ export default function Ranker() {
   const [busy, setBusy] = useState(false)
   const [resultsLabel, setResultsLabel] = useState('Results')
   const [gameColours] = useState(['#007EC2', '#EE3124', '#619635', '#F59E0C'])
-  //const [colourBC49] = useState('#EE3124')
-  //const [colourMAX] = useState('#619635')
-  //const [colourGrand] = useState('#F59E0C')
 
   ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 

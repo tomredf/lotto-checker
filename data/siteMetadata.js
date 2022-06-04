@@ -2,7 +2,7 @@ const siteMetadata = {
   title: 'Lotto Checker',
   author: 'Dermot Fitzpatrick',
   headerTitle: 'Lotto Checker',
-  description: 'Canadian 649, Lotto MAX, BC49, and BC Daily Grand Lotto Checker',
+  description: 'Canadian lotto 649, Lotto MAX, BC49, and BC Daily Grand Lotto Checker',
   language: 'en-ca',
   theme: 'system', // system, dark or light
   siteUrl: 'https://lotto-checker.vercel.app',
