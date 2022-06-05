@@ -3,7 +3,7 @@ import siteMetadata from '@/data/siteMetadata'
 import Papa from 'papaparse'
 import React from 'react'
 
-export default function CTA() {
+export default function Links() {
   return (
     <div className="">
       <div className="border-t border-gray-200 pt-8 dark:border-gray-700">

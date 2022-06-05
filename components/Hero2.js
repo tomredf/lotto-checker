@@ -10,7 +10,7 @@ export default function Hero2() {
   return (
     <div className="relative overflow-hidden">
       <main>
-        <div className="pt-5 lg:overflow-hidden lg:pt-10 lg:pt-0 lg:pb-14">
+        <div className="pt-5 lg:overflow-hidden lg:pt-10 lg:pt-0 lg:pb-2">
           <div className="mx-auto max-w-7xl lg:px-0">
             <div className="grid md:grid-cols-2 lg:gap-8">
               <div className="mx-auto max-w-7xl px-4 text-center sm:max-w-2xl sm:px-6 md:text-left lg:flex  lg:px-0">
@@ -36,7 +36,7 @@ export default function Hero2() {
                     src={'/static/images/hero3.svg'}
                     // className="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
                     width={800}
-                    height={600}
+                    height={550}
                     layout="intrinsic"
                   />
                 </div>
