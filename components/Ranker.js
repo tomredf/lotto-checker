@@ -37,6 +37,7 @@ export default function Ranker() {
   const [results, setResults] = useState([])
   const [barColours, setBarColours] = useState([])
   const [name, setName] = useState('')
+  const [weblink, setWebLink] = useState('')
   const [icon, setIcon] = useState('/static/images/default.png')
   const [busy, setBusy] = useState(false)
   const [resultsLabel, setResultsLabel] = useState('Results')
@@ -267,6 +268,7 @@ export default function Ranker() {
     setBusy(true)
     setName('649')
     setIcon('/static/images/649.png')
+    setWebLink('https://www.playnow.com/lottery/lotto-649/')
     readRemoteFile('/static/649.csv', {
       header: true,
       download: true,
@@ -285,6 +287,7 @@ export default function Ranker() {
     setBusy(true)
     setName('BC49')
     setIcon('/static/images/bc49.png')
+    setWebLink('https://www.playnow.com/lottery/bc-49/')
     readRemoteFile('/static/BC49.csv', {
       header: true,
       download: true,
@@ -303,6 +306,7 @@ export default function Ranker() {
     setBusy(true)
     setName('Max')
     setIcon('/static/images/max.png')
+    setWebLink('https://www.playnow.com/lottery/lotto-max/')
     readRemoteFile('/static/MAX.csv', {
       header: true,
       download: true,
@@ -321,6 +325,7 @@ export default function Ranker() {
     setBusy(true)
     setName('Daily Grand')
     setIcon('/static/images/dailygrand.png')
+    setWebLink('https://www.playnow.com/lottery/daily-grand/')
     readRemoteFile('/static/DailyGrand.csv', {
       header: true,
       download: true,
@@ -449,11 +454,32 @@ export default function Ranker() {
             </p>
           </div>
         </div>*/}
+        {!busy && weblink != '' && (
+          <div className="pt-2">
+            <Link
+              className="
+                  bg-gradient-to-r from-primary-500
+                  via-blue-500 to-secondary-500 bg-[length:0px_3px] bg-left-bottom
+                  bg-no-repeat
+                  text-lg font-bold
+                  text-primary-500
+                  transition-[background-size]
+                  duration-500
+                  hover:bg-[length:100%_3px]
+                  dark:text-secondary-500
+              "
+              href={weblink}
+            >
+              Lotto {name} website
+            </Link>
+          </div>
+        )}
         <div className="-mx-4 mt-4 max-h-[55vh] max-w-7xl overflow-y-auto rounded-md shadow sm:-mx-6 md:mx-0">
           <div className="sticky top-0 z-10 inline-flex h-16 w-full items-center rounded-t-md bg-gray-50 py-3 px-2 dark:bg-gray-700 md:h-20">
             <img src={icon} height="30" alt="Game icon" />
             <div className="ml-4 w-full items-center text-xl md:text-3xl">{resultsLabel}</div>
           </div>
+
           <div className="bg-white py-3 px-2 dark:bg-gray-800">
             {!busy && <Bar data={data} width={400} height={100} options={options} />}
           </div>

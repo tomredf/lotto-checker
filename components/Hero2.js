@@ -18,7 +18,7 @@ export default function Hero2() {
                   <h1 className="mt-0 text-3xl font-extrabold tracking-tight text-primary-500 sm:mt-0 sm:text-4xl lg:mt-0 xl:text-6xl">
                     <span className="block">Lotto Checker</span>
                     <span className="block text-xl text-secondary-500 md:text-2xl xl:text-3xl">
-                      649, BC49, Max, & Daily Grand
+                      Lotto 649, BC49, Max, & Daily Grand
                     </span>
                   </h1>
                   <p className="mt-3 text-sm text-gray-600 dark:text-gray-300 sm:mt-5 md:text-base lg:text-lg">
