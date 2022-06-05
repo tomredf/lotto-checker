@@ -22,7 +22,8 @@ export default function Hero2() {
                     </span>
                   </h1>
                   <p className="mt-3 text-sm text-gray-600 dark:text-gray-300 sm:mt-5 md:text-base lg:text-lg">
-                    This site is only for fun and only applies to lotteries available in Canada.
+                    This site is only for fun and only applies to lotteries available in Canada. The
+                    BC49 is only available in British Columbia.
                   </p>
                   <div className="mt-10 sm:mt-5">
                     <CTA />
