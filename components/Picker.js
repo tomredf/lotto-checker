@@ -443,7 +443,7 @@ export default function Picker() {
                 {results.map((draw, index) => (
                   <tr
                     key={index}
-                    className="divide-x divide-gray-200 bg-white hover:bg-gray-100 dark:divide-gray-600 dark:bg-gray-800 dark:hover:bg-gray-700"
+                    className="divide-x divide-gray-200 bg-white hover:bg-gray-100 dark:divide-gray-600 dark:bg-gray-800 dark:hover:bg-gray-900"
                   >
                     <td className="w-full max-w-0 py-2 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-gray-100 sm:w-auto sm:max-w-none sm:pl-6">
                       Play {index + 1}
